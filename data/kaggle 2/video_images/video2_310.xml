@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>video2_310.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\Indian_ANPR_090921\video_images\video2_310.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>669</width>
+		<height>606</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH02EU4884</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>230</xmin>
+			<ymin>200</ymin>
+			<xmax>405</xmax>
+			<ymax>263</ymax>
+		</bndbox>
+	</object>
+</annotation>

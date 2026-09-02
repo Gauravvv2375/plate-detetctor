@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>car-ybs-MH47N4570_00000.png</filename>
+	<path>C:\Users\Siri\Desktop\BARC ki padhai\Project\Indian_ANPR_090921\video_images\car-ybs-MH47N4570_00000.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>454</width>
+		<height>452</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH47N4570</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>155</xmin>
+			<ymin>239</ymin>
+			<xmax>311</xmax>
+			<ymax>285</ymax>
+		</bndbox>
+	</object>
+</annotation>

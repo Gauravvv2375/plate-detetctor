@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video11_4730.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video11_4730.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>423</width>
+		<height>549</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH03CP1328</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>170</xmin>
+			<ymin>367</ymin>
+			<xmax>314</xmax>
+			<ymax>403</ymax>
+		</bndbox>
+	</object>
+</annotation>

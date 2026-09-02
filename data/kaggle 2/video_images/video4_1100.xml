@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video4_1100.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video4_1100.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>661</width>
+		<height>414</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>GJ12FA0735</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>114</xmin>
+			<ymin>217</ymin>
+			<xmax>213</xmax>
+			<ymax>245</ymax>
+		</bndbox>
+	</object>
+</annotation>

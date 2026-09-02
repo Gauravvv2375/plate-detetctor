@@ -1,0 +1,33 @@
+<annotation>
+  <folder>Datacluster</folder>
+  <filename>Datacluster_number_plates (79).jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>3000</width>
+    <height>4000</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>number_plate</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1246.25</xmin>
+      <ymin>1452.5</ymin>
+      <xmax>2083.7</xmax>
+      <ymax>1721.25</ymax>
+    </bndbox>
+    <attributes>
+      <attribute>
+        <name>rotation</name>
+        <value>0.0</value>
+      </attribute>
+    </attributes>
+  </object>
+</annotation>

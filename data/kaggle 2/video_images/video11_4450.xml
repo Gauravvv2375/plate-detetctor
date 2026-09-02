@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video11_4450.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video11_4450.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>753</width>
+		<height>753</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH02MA5324</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>196</xmin>
+			<ymin>555</ymin>
+			<xmax>378</xmax>
+			<ymax>610</ymax>
+		</bndbox>
+	</object>
+</annotation>

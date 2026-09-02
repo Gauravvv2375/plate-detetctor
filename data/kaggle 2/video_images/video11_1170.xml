@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video11_1170.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video11_1170.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>927</width>
+		<height>645</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH04EX7505</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>101</xmin>
+			<ymin>417</ymin>
+			<xmax>249</xmax>
+			<ymax>479</ymax>
+		</bndbox>
+	</object>
+</annotation>

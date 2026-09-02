@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video3_1920.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video3_1920.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>785</width>
+		<height>771</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH01BD2186</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>138</xmin>
+			<ymin>426</ymin>
+			<xmax>290</xmax>
+			<ymax>474</ymax>
+		</bndbox>
+	</object>
+</annotation>

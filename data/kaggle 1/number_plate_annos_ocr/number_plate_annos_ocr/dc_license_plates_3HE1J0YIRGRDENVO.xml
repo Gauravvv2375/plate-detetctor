@@ -1,0 +1,37 @@
+<annotation>
+  <folder>dc</folder>
+  <filename>dc_license_plates_3HE1J0YIRGRDENVO.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>3120</width>
+    <height>4160</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>number_plate</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1184.92</xmin>
+      <ymin>1753.32</ymin>
+      <xmax>2084.1</xmax>
+      <ymax>2301.6</ymax>
+    </bndbox>
+    <attributes>
+      <attribute>
+        <name>number_plate_text</name>
+        <value>TN58D5353</value>
+      </attribute>
+      <attribute>
+        <name>rotation</name>
+        <value>0.0</value>
+      </attribute>
+    </attributes>
+  </object>
+</annotation>

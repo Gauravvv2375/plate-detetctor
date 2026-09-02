@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video10_980.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video10_980.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>556</width>
+		<height>393</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH01AU0059</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>345</xmin>
+			<ymin>192</ymin>
+			<xmax>426</xmax>
+			<ymax>216</ymax>
+		</bndbox>
+	</object>
+</annotation>

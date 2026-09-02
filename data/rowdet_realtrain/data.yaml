@@ -1,0 +1,5 @@
+path: .
+train: images/val
+val: images/val
+nc: 1
+names: [text_row]

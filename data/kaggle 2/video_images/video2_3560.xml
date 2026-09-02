@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>video2_3560.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\Indian_ANPR_090921\video_images\video2_3560.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1017</width>
+		<height>735</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH02AQ2299</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>138</xmin>
+			<ymin>85</ymin>
+			<xmax>578</xmax>
+			<ymax>224</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,10 @@
+# Python 3.10-3.12 recommended. PyTorch is explicit so every model uses one backend.
+torch==2.7.1
+torchvision==0.22.1
+# 8.3.203 corrupts validation class tensors on Apple MPS via non-blocking transfers.
+# 8.3.253 contains the official fix while staying on the same 8.3 release line.
+ultralytics==8.3.253
+python-doctr[torch]==0.11.0
+opencv-python==4.11.0.86
+Pillow==11.3.0
+numpy==2.1.3

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>car-wbs-MH43AF5037_00000.png</filename>
+	<path>C:\Users\Siri\Desktop\BARC ki padhai\Project\Indian_ANPR_090921\video_images\car-wbs-MH43AF5037_00000.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>410</width>
+		<height>355</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH43AF5037</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>196</xmin>
+			<ymin>177</ymin>
+			<xmax>320</xmax>
+			<ymax>218</ymax>
+		</bndbox>
+	</object>
+</annotation>

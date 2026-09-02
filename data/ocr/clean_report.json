@@ -1,0 +1,69 @@
+{
+  "train": {
+    "total": 19216,
+    "kept": 19194,
+    "dropped": 22,
+    "dropped_real": 22,
+    "reasons": [
+      [
+        "no valid format",
+        19
+      ],
+      [
+        "length 5",
+        1
+      ],
+      [
+        "length 4",
+        1
+      ],
+      [
+        "unknown state 'ME'",
+        1
+      ]
+    ],
+    "examples": [
+      "ASM1634",
+      "CRETA",
+      "KA42TC131011",
+      "HP24C8D32",
+      "BLUR",
+      "DL9C0S1537",
+      "DL758Y1790",
+      "GJW115A1138",
+      "AP318L4935",
+      "HPSX4000",
+      "GJW115A1138",
+      "WB02W9S3S",
+      "MH038C6247",
+      "UK07055789",
+      "ME02EE4077",
+      "KL01KL0KL01",
+      "MHD1CV9311",
+      "GJ051D9443",
+      "MHD1CV9311",
+      "MH010PO323"
+    ]
+  },
+  "val": {
+    "total": 225,
+    "kept": 222,
+    "dropped": 3,
+    "dropped_real": 3,
+    "reasons": [
+      [
+        "no valid format",
+        2
+      ],
+      [
+        "unknown state 'BF'",
+        1
+      ]
+    ],
+    "examples": [
+      "AP310U7562",
+      "W0BNP300",
+      "BF06P00006"
+    ]
+  }
+}

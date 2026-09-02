@@ -1,0 +1,1 @@
+../../../../../data/det/labels/train/CarLongPlateGen1853_jpg.rf.36b471d1a0941366e93308a67c516e22.txt

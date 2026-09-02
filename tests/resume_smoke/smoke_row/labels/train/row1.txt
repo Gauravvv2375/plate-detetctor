@@ -1,0 +1,1 @@
+../../../../../data/rowdet_obb/labels/train/syn_s2_001911.txt

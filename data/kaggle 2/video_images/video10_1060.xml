@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video10_1060.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video10_1060.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>541</width>
+		<height>792</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH03DV2010</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>181</xmin>
+			<ymin>171</ymin>
+			<xmax>312</xmax>
+			<ymax>206</ymax>
+		</bndbox>
+	</object>
+</annotation>

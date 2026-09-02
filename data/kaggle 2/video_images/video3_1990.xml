@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video3_1990.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video3_1990.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>434</width>
+		<height>649</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH02ER9194</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>178</xmin>
+			<ymin>353</ymin>
+			<xmax>288</xmax>
+			<ymax>380</ymax>
+		</bndbox>
+	</object>
+</annotation>

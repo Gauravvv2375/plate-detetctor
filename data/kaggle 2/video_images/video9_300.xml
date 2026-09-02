@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video9_300.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video9_300.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>263</width>
+		<height>516</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH48AW0091</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>46</xmin>
+			<ymin>301</ymin>
+			<xmax>256</xmax>
+			<ymax>381</ymax>
+		</bndbox>
+	</object>
+</annotation>

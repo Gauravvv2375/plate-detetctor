@@ -1,0 +1,2762 @@
+{
+  "sources": {
+    "original": {
+      "path": "/Users/gauravghanekar/Downloads/number_data/data/det",
+      "annotation_format": "YOLO detection",
+      "data_yaml": "/Users/gauravghanekar/Downloads/number_data/data/det/data.yaml",
+      "declared_class_names": [
+        "license_plate"
+      ],
+      "original_class_ids": [
+        0
+      ],
+      "object_names": {},
+      "image_formats": {
+        ".jpg": 8975
+      },
+      "split_images": {
+        "train": 6308,
+        "val": 1784,
+        "test": 883
+      },
+      "total_images": 8975,
+      "total_label_files": 8974,
+      "plate_annotations": 9172,
+      "empty_labels": 151,
+      "missing_labels": [
+        "/Users/gauravghanekar/Downloads/number_data/data/det/images/test/0002a5b67e5f0909_jpg.rf.faf1b011433d7eefbc249c76e730e2aa_annotated.jpg"
+      ],
+      "orphan_labels": [],
+      "corrupt_images": [],
+      "jpeg_eoi_warnings": [],
+      "malformed_annotations": [],
+      "duplicate_groups": 0,
+      "duplicate_images": 0,
+      "accepted_before_dedup": 8974,
+      "contributed": {
+        "train": 6308,
+        "val": 1784,
+        "test": 882
+      },
+      "duplicates_skipped": 0,
+      "conflicts_rejected": 0
+    },
+    "kaggle1": {
+      "path": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1",
+      "annotation_format": "Pascal VOC XML (pixel xyxy)",
+      "data_yaml": null,
+      "declared_class_names": [],
+      "original_class_ids": [],
+      "object_names": {
+        "number_plate": 52
+      },
+      "image_formats": {
+        ".jpg": 47
+      },
+      "split_images": {
+        "train": 34,
+        "val": 7,
+        "test": 4
+      },
+      "total_images": 47,
+      "total_label_files": 47,
+      "plate_annotations": 45,
+      "empty_labels": 0,
+      "missing_labels": [],
+      "orphan_labels": [],
+      "corrupt_images": [],
+      "jpeg_eoi_warnings": [
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/number_plate_images_ocr/number_plate_images_ocr/dc_truck_image_001564_RZeQ1TZR.jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Indian_Number_Plates/Sample_Images/Datacluster_number_plates (79).jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Indian_Number_Plates/Sample_Images/Datacluster_number_plates (5).jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Indian_Number_Plates/Sample_Images/Datacluster_number_plates (55).jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Indian_Number_Plates/Sample_Images/Datacluster_number_plates (99).jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Indian_Number_Plates/Sample_Images/Datacluster_number_plates (36).jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Indian_Number_Plates/Sample_Images/Datacluster_number_plates (89).jpg"
+      ],
+      "malformed_annotations": [
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/Annotations/Annotations/Datacluster_number_plates (11).xml:object 1: invalid pixel box [248.0, 992.0, 1308.0, 1604.0] for 2560x1440",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 1/number_plate_annos_ocr/number_plate_annos_ocr/dc_auto_image_000021_bMXgvtud5K.xml:object 5: invalid pixel box [1944.28, 2289.08, 2356.6, 2507.0] for 3264x2448"
+      ],
+      "duplicate_groups": 0,
+      "duplicate_images": 0,
+      "accepted_before_dedup": 45,
+      "contributed": {
+        "train": 34,
+        "val": 7,
+        "test": 4
+      },
+      "duplicates_skipped": 0,
+      "conflicts_rejected": 0
+    },
+    "kaggle2": {
+      "path": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2",
+      "annotation_format": "Pascal VOC XML (pixel xyxy; object names are plate transcriptions)",
+      "data_yaml": null,
+      "declared_class_names": [],
+      "original_class_ids": [],
+      "object_names": {
+        "AN01P9687": 1,
+        "AN01K9412": 1,
+        "AN01D4163": 1,
+        "AN01M4M": 1,
+        "AN01L6155": 1,
+        "AN01H1689": 1,
+        "AN01H0908": 1,
+        "AP05BY7799": 1,
+        "AP39E1493": 1,
+        "AP310U7562": 1,
+        "AP39JJ5441": 1,
+        "AP10AS3445": 1,
+        "AP28AT5333": 1,
+        "AP39GR3492": 1,
+        "AP31TP2282": 1,
+        "AP16BS4500": 1,
+        "AP04M7627": 1,
+        "AP07AN3915": 1,
+        "AP04AS8753": 1,
+        "AP31AT5064": 1,
+        "AP16CH9545": 1,
+        "AP39DL3537": 1,
+        "AP07AD5555": 1,
+        "AP26AM1260": 1,
+        "AP31BR9501": 1,
+        "AP31EF1155": 1,
+        "AP31DF2833": 1,
+        "AP2D4014": 1,
+        "AP31DT9378": 1,
+        "AP31DA0020": 1,
+        "AP37EJ2277": 1,
+        "AP05DY3395": 1,
+        "AP39HZ0087": 1,
+        "AP04BA4464": 1,
+        "AP5CG6320": 1,
+        "AP31TV6847": 1,
+        "AP31BG7827": 1,
+        "AP318L4935": 1,
+        "AP31BL2833": 1,
+        "AP31CS2511": 1,
+        "AP39TP0211": 1,
+        "AP31TV7236": 1,
+        "AP31BL8656": 1,
+        "AP16DP7065": 1,
+        "AR048395": 1,
+        "AR152019": 1,
+        "AR01J0123": 1,
+        "AR118724": 1,
+        "AR200692": 1,
+        "AR01F2523": 1,
+        "AR169723": 1,
+        "AR01C5723": 1,
+        "AR168272": 1,
+        "AR02A7116": 1,
+        "AR08983": 1,
+        "AR01E1034": 1,
+        "AS23H2866": 1,
+        "AS01DG6002": 1,
+        "AS01DS7523": 1,
+        "AS25S6858": 1,
+        "AS018P2415": 1,
+        "AS01BF9673": 1,
+        "AS01AL3746": 1,
+        "AS01AR1986": 1,
+        "AS04P4549": 1,
+        "AS06U1295": 1,
+        "AS07AC6653": 1,
+        "AS01AT8119": 1,
+        "AS23X5585": 1,
+        "AS01AN8668": 1,
+        "AS19D9919": 1,
+        "AS23G2612": 1,
+        "AS01BS4362": 1,
+        "AS06Z0841": 1,
+        "AS23E0596": 1,
+        "AS23H0770": 1,
+        "AS12S6951": 1,
+        "AS06Q4437": 1,
+        "AS01AM1419": 1,
+        "AS04X2780": 1,
+        "BR32PA6558": 1,
+        "BR02AF7424": 1,
+        "BR03PA3803": 1,
+        "BR01PL7594": 1,
+        "BR01BL6628": 1,
+        "BR01BR5435": 1,
+        "BR33M0001": 1,
+        "BF06P00006": 1,
+        "BR01BD5042": 1,
+        "BR01AZ6290": 1,
+        "BR06U2470": 1,
+        "BR01BE0777": 1,
+        "BR7P3952": 1,
+        "BR44E1206": 1,
+        "BR01DG6692": 1,
+        "BR01AW1250": 1,
+        "CG04HD6930": 1,
+        "CG22H7740": 1,
+        "CG04HA4553": 1,
+        "CG12AG1130": 1,
+        "CG16B1802": 1,
+        "CG09JA2359": 1,
+        "CG07BR3255": 1,
+        "CG07R2684": 1,
+        "CG07MA2529": 1,
+        "CG07CA7784": 1,
+        "CG07MA7848": 1,
+        "CG251612": 1,
+        "CG04FJ5834": 1,
+        "CG13AE4060": 1,
+        "CG04HV7009": 1,
+        "CG22AB1111": 1,
+        "CG08K2057": 1,
+        "CG04H5060": 1,
+        "CG04HC4887": 1,
+        "CH01BQ5604": 1,
+        "CH01AB4559": 1,
+        "CH01BL3528": 1,
+        "CH03K7672": 1,
+        "CH01AX9090": 1,
+        "CH01AP4538": 1,
+        "CH01AZ2642": 1,
+        "CH01AL4920": 1,
+        "CH01A09331": 1,
+        "CH01AF1382": 1,
+        "DL6CJ8404": 1,
+        "DL9CAE1359": 1,
+        "DL9CAP8884": 1,
+        "DL5CH7599": 1,
+        "DL12CJ9823": 1,
+        "DL9CAU4743": 1,
+        "DL8CZ7230": 1,
+        "DL9CAV1739": 1,
+        "DL1CS8739": 1,
+        "DL1CT2782": 1,
+        "DL6CR7002": 1,
+        "DL12CL2555": 1,
+        "DL12CS7886": 1,
+        "DL6CL0457": 1,
+        "DL2CAX2886": 1,
+        "DL3CCK8019": 1,
+        "DL9C0S1537": 1,
+        "DL11CA4900": 1,
+        "DL10CA0986": 1,
+        "DL40NA7238": 1,
+        "DL8CAL4134": 1,
+        "DL8CAU6883": 1,
+        "DL10C05520": 1,
+        "DL8CNA1596": 1,
+        "DL2CAR0108": 1,
+        "DL4CNA7231": 1,
+        "DL8CNA5085": 1,
+        "DL3CBS5881": 1,
+        "DL4CAQ3231": 1,
+        "DL9CAU5573": 1,
+        "DL12CN8660": 1,
+        "DL4CAM9066": 1,
+        "DL12CK8643": 1,
+        "DL10CH1252": 1,
+        "DL2CH8634": 1,
+        "DN09H2191": 1,
+        "DN09J1548": 1,
+        "DN09H0968": 1,
+        "DN09J0032": 1,
+        "DN09D2724": 1,
+        "DN0901438": 1,
+        "DN0909704": 1,
+        "DN09C0868": 1,
+        "GA03R9230": 1,
+        "GA01R6315": 1,
+        "GA03P2839": 1,
+        "GA03Y9512": 1,
+        "GA07K6090": 1,
+        "GA08M0184": 1,
+        "GA01S5594": 1,
+        "GA01C2098": 1,
+        "GA01E5947": 1,
+        "GA02J2129": 1,
+        "GA07K7150": 1,
+        "GA05B5077": 1,
+        "GA06E3855": 1,
+        "GJ7AG4373": 1,
+        "GJ01RA8370": 1,
+        "GJ06HS1855": 1,
+        "GJ06PA0097": 1,
+        "GJ06KP8508": 1,
+        "GJ06DG9355": 1,
+        "GJ01HS1902": 1,
+        "GJ01KC9959": 1,
+        "GJ06DQ3712": 1,
+        "GJ01RN4259": 1,
+        "GJ15CB3980": 1,
+        "GJ01RK2430": 1,
+        "GJ12CG2526": 1,
+        "GJ18BD5216": 1,
+        "GJ01RS0198": 1,
+        "GJ23CC8798": 1,
+        "GJ01HM5887": 1,
+        "GJ09AG8384": 1,
+        "GJ18BK6705": 1,
+        "GJ05JB6589": 1,
+        "GJ01RM3413": 1,
+        "GJ06JE4788": 1,
+        "GJ1SCG7928": 1,
+        "GJ06FK2977": 1,
+        "GJ34B9811": 1,
+        "GJ16CH9827": 1,
+        "GJ05RE8119": 1,
+        "HP12H1324": 1,
+        "HP52B5958": 1,
+        "HP12H7917": 1,
+        "HP36E3330": 1,
+        "HP34C8986": 1,
+        "HP3SG1539": 1,
+        "HP22E8000": 1,
+        "HP302165": 1,
+        "HP20E3953": 1,
+        "HP24C8D32": 1,
+        "HP54C6564": 1,
+        "HP16A2014": 1,
+        "HP2020TR6255G": 1,
+        "HP40B8992": 1,
+        "HP64B3380": 1,
+        "HP666807": 1,
+        "HP48B2252": 1,
+        "HP01N0304": 1,
+        "HP01A7630": 1,
+        "HP12C3766": 1,
+        "HP719898": 1,
+        "HP23A6365": 1,
+        "HR26BQ8176": 1,
+        "HR26BY4812": 1,
+        "HR01H4731": 1,
+        "HR29R9466": 1,
+        "HR51AQ0911": 1,
+        "HR51BU8218": 1,
+        "HR29K7840": 1,
+        "HR56B2626": 1,
+        "HR26BK8597": 1,
+        "HR26DM2296": 1,
+        "HR29AQ4939": 1,
+        "HR71F9259": 1,
+        "HR26EJ7668": 1,
+        "HR4281329": 1,
+        "HR09G8378": 1,
+        "HR29W8286": 1,
+        "HR10AE9885": 1,
+        "HR26CC7676": 1,
+        "HR26DJ8832": 1,
+        "HR01W0080": 1,
+        "HR20X8432": 1,
+        "HR29AS0015": 1,
+        "JH01Z3792": 1,
+        "JH02AD2533": 1,
+        "JH01BC5210": 1,
+        "JH01AX5392": 1,
+        "JH01AM2354": 1,
+        "JH10BV1496": 1,
+        "JH08C0625": 1,
+        "JH10S5378": 1,
+        "JH01AR2011": 1,
+        "JH05S3291": 1,
+        "JH05Y9636": 1,
+        "JH01AM0100": 1,
+        "JH01DB1881": 1,
+        "JH09AA2570": 1,
+        "JH02AH0750": 1,
+        "JH01BX0013": 1,
+        "JH04C7104": 1,
+        "JH01BU9956": 1,
+        "JK02BF5058": 1,
+        "JK02AK8967": 1,
+        "JK03D7750": 1,
+        "JK01AD3147": 1,
+        "JK01AF7715": 1,
+        "JK11D8143": 1,
+        "JK02AJ1525": 1,
+        "JK09B7745": 1,
+        "JK02AS3888": 1,
+        "JK1182360": 1,
+        "JK127959": 1,
+        "JK02BJ7997": 1,
+        "JK02BJ4045": 1,
+        "JK01AL4613": 1,
+        "JK02CC0447": 1,
+        "JK02BN3088": 1,
+        "JK02AG2454": 1,
+        "JK01D8354": 1,
+        "JK10A5217": 1,
+        "JK01AF0310": 1,
+        "JK02BL1212": 1,
+        "JK02ACB876": 1,
+        "JK03A8042": 1,
+        "JK13C4452": 1,
+        "JK10B2313": 1,
+        "JK10A4638": 1,
+        "JK072483": 1,
+        "JK01M4723": 1,
+        "JK05H3594": 1,
+        "JK01R8021": 1,
+        "JK11B4928": 1,
+        "JK02W2657": 1,
+        "JK02CD0461": 1,
+        "KA03MQ6984": 2,
+        "KA04MG7528": 1,
+        "KA04MK0368": 1,
+        "KA02MF3336": 1,
+        "KA03NC7167": 1,
+        "KA01MG1660": 1,
+        "KA04MK312": 1,
+        "KA05MF1762": 1,
+        "KA19MF1763": 1,
+        "KA28M3589": 1,
+        "KA51ML4025": 1,
+        "KA25P5080": 1,
+        "KA38M8037": 2,
+        "KA06C9590": 1,
+        "KA53P7604": 1,
+        "KA51P7755": 1,
+        "KA51D9662": 1,
+        "KA01MB9714": 1,
+        "KL45C4411": 1,
+        "KL0BBJ5001": 1,
+        "KL03S6394": 1,
+        "KL43G6619": 1,
+        "KL43D4444": 1,
+        "KL43D4389": 1,
+        "KL02AF6723": 1,
+        "KL27D9809": 1,
+        "KL34A7564": 1,
+        "KL46R3613": 1,
+        "KL41M93": 1,
+        "KL07BU7707": 1,
+        "KL16U8863": 1,
+        "LA020749": 1,
+        "MH06AB8620": 1,
+        "MH11CQ8516": 1,
+        "MH36H5700": 1,
+        "MH12NJ5838": 1,
+        "MH05BS3471": 1,
+        "MH43X8997": 1,
+        "MH05EQ4066": 1,
+        "MH12GR862": 1,
+        "MH01BT7906": 1,
+        "MH12HN4507": 1,
+        "MH12KN8366": 1,
+        "MH48AK2798": 1,
+        "MH12KJ7659": 1,
+        "MH04DR8508": 1,
+        "MH05CH1754": 1,
+        "MH49AS5099": 1,
+        "MH04HF5092": 1,
+        "MH12FK1392": 1,
+        "MH12HF5057": 1,
+        "MH48AC6244": 1,
+        "MH12MF6822": 1,
+        "MH47N0712": 1,
+        "MH12KY6921": 1,
+        "MH02DN7410": 1,
+        "ML05F6894": 1,
+        "ML06A1659": 1,
+        "ML05L1434": 1,
+        "ML05F9854": 1,
+        "ML05H1958": 1,
+        "ML10B9308": 1,
+        "ML111909": 1,
+        "ML133317": 1,
+        "ML05L5154": 1,
+        "ML10B4503": 1,
+        "ML04C0056": 1,
+        "ML05Q8790": 1,
+        "ML137827": 1,
+        "ML05J3288": 1,
+        "ML1032811": 1,
+        "ML05R1934": 1,
+        "ML0563550": 1,
+        "ML04B8389": 1,
+        "ML068346": 1,
+        "ML05K9494": 1,
+        "ML08C8061": 1,
+        "ML04C4738": 1,
+        "ML05C5389": 1,
+        "ML05J8950": 1,
+        "ML10C2674": 1,
+        "ML04B8918": 1,
+        "ML05H6564": 1,
+        "ML05G3474": 1,
+        "ML08B1100": 1,
+        "ML08E9223": 1,
+        "ML064696": 1,
+        "ML05D0571": 1,
+        "ML069642": 1,
+        "ML087084": 1,
+        "MN05A6028": 1,
+        "MN01G0297": 1,
+        "MN06LA0861": 1,
+        "MN01G5395": 1,
+        "MN01K5346": 1,
+        "MP04CL3546": 1,
+        "MP08CA6293": 1,
+        "MP07CB8897": 1,
+        "MP04CL8840": 1,
+        "MP65C0654": 1,
+        "MP09CK4943": 1,
+        "MP20TA0919": 1,
+        "MP07CA5563": 1,
+        "MP09BD1270": 1,
+        "MP09CQ9712": 1,
+        "MP45G0872": 1,
+        "MZ01G9825": 1,
+        "NL01CB433": 1,
+        "NL078440": 1,
+        "NL02C3947": 1,
+        "NL07CA7631": 1,
+        "NL02C9593": 1,
+        "NL01T8152": 1,
+        "NL07T0937": 1,
+        "NL02C6709": 1,
+        "OD05K6964": 1,
+        "OR02BV0701": 1,
+        "OR05AN4494": 1,
+        "OD052323": 1,
+        "OD02L4656": 1,
+        "OD05Y5787": 1,
+        "OR14U8730": 1,
+        "OD14B7432": 1,
+        "OD22J9911": 1,
+        "OD11P6123": 1,
+        "OD01Q4668": 1,
+        "OR05AC0422": 1,
+        "OR21E1033": 1,
+        "OD02J0435": 1,
+        "OD02AP3010": 1,
+        "OD021481": 1,
+        "OD25F7400": 1,
+        "OD02V0007": 1,
+        "OD02C2836": 1,
+        "OD14E3131": 1,
+        "OR08F1001": 1,
+        "OD33L2616": 1,
+        "PB11BG7347": 1,
+        "PB11BN6101": 1,
+        "PB08C03690": 1,
+        "PB07BY3563": 1,
+        "PB08DT7342": 1,
+        "PB10EH0164": 1,
+        "PB30L5010": 1,
+        "PB23S8600": 1,
+        "PB08BF6160": 1,
+        "PB10CX0209": 1,
+        "PB04S4253": 1,
+        "PB31R8123": 1,
+        "PB37A8269": 1,
+        "PB06AN6162": 1,
+        "PB02CC7299": 1,
+        "PB02DY7380": 1,
+        "PB10CK5005": 1,
+        "PB04T0678": 1,
+        "PB65AN2583": 1,
+        "PB10EE0888": 1,
+        "PB08DY4824": 1,
+        "PB07BL8058": 1,
+        "PB2313752": 1,
+        "PB13AF6756": 1,
+        "PB10DV5354": 1,
+        "PB10CQ0006": 1,
+        "PB35F9333": 1,
+        "PY01Q7947": 1,
+        "PY01CE4149": 1,
+        "PY01AH9067": 1,
+        "PY01CG2929": 1,
+        "PY01CV2447": 1,
+        "PY05A8339": 1,
+        "PY01BU2406": 1,
+        "PY02S9326": 1,
+        "PY02L4602": 1,
+        "PY01CM9549": 1,
+        "PY01CM5400": 1,
+        "PY02S7828": 1,
+        "PY01AW2814": 1,
+        "PY01AP0555": 1,
+        "PY036993": 1,
+        "PY01BD9020": 1,
+        "PY055353": 1,
+        "RJ14CM3730": 1,
+        "RJ14CW4115": 1,
+        "RJ20CD5118": 1,
+        "RJ14CF5807": 1,
+        "RJ23CB2272": 1,
+        "RJ23CB4320": 1,
+        "RJ20UB0137": 1,
+        "SK01PA2969": 1,
+        "SK01PB5004": 1,
+        "SK02P1078": 1,
+        "SK01T3835": 1,
+        "SK05T0338": 1,
+        "SK01T3794": 1,
+        "SK01PA7708": 1,
+        "SK01PA4521": 1,
+        "SK01PB3596": 1,
+        "SK04P1320": 1,
+        "SK02P3471": 1,
+        "SK01PA5349": 1,
+        "SK01T8791": 1,
+        "TN63BV7954": 1,
+        "TN69AJ4455": 1,
+        "TN76V1978": 1,
+        "TN02AU9295": 1,
+        "TN10AR0131": 1,
+        "TN47T4464": 1,
+        "TN19F0816": 1,
+        "TN07BT5778": 1,
+        "TN07AP0659": 1,
+        "TN19Q0835": 1,
+        "TR05B0308": 1,
+        "TR07D0569": 1,
+        "TR03H0259": 1,
+        "TR02L0569": 1,
+        "TR01N0481": 1,
+        "TR01X0482": 1,
+        "TR01BG0365": 1,
+        "TR03F0375": 1,
+        "TR01E2157": 1,
+        "TR01AS0609": 1,
+        "TS08FQ1262": 1,
+        "TS11EQ2914": 1,
+        "TS08FZ8298": 1,
+        "TS09UA7948": 1,
+        "TS15ES0894": 1,
+        "TS36H6578": 1,
+        "TS13EK6213": 1,
+        "TS07HM2684": 1,
+        "TS07EL3335": 1,
+        "TS09EZ9293": 1,
+        "TS09EZ9296": 1,
+        "TS09EA4088": 1,
+        "TS18T3899": 1,
+        "TS08EZ9463": 1,
+        "TS09EG6565": 1,
+        "TS21J8351": 1,
+        "UK08W2276": 1,
+        "UK07AA2432": 1,
+        "UK06CB4595": 1,
+        "UK185763": 1,
+        "UP23K0008": 1,
+        "UK106679": 1,
+        "UK07055789": 1,
+        "UK07AM5665": 1,
+        "UK07BK5014": 1,
+        "UK06J3953": 1,
+        "UP57H8173": 1,
+        "UP78DB3730": 1,
+        "UP53AK1161": 1,
+        "UP14CV7920": 1,
+        "UP16BD4866": 1,
+        "UP79L0567": 1,
+        "UP32KW7325": 1,
+        "UP32CX3400": 1,
+        "UP45Q3028": 1,
+        "UP85BN4203": 1,
+        "UP14AK8604": 1,
+        "UP52AH9705": 1,
+        "UP11AY0646": 1,
+        "UP78ED0449": 1,
+        "UP27Z7322": 1,
+        "UP32BF3577": 1,
+        "UP14AX9754": 1,
+        "UP70ET7816": 1,
+        "UP32HY6077": 1,
+        "UP14AF3804": 1,
+        "UP80FA1666": 1,
+        "UP16U3849": 1,
+        "UP32EC5577": 1,
+        "UP16AJ0704": 1,
+        "WB26T6688": 1,
+        "WB08A4101": 1,
+        "WB26S5093": 1,
+        "WB26K2760": 1,
+        "WB36G6682": 1,
+        "WB12AX2987": 1,
+        "WB06J9177": 1,
+        "WB02AJ4534": 1,
+        "WB06J2192": 1,
+        "WB061061": 1,
+        "WB02M8447": 1,
+        "WB171717": 1,
+        "WB02W9S3S": 1,
+        "WB20H0271": 1,
+        "WB20AG9041": 1,
+        "WB06H2237": 1,
+        "WB02A03017": 1,
+        "WB02AD4162": 1,
+        "WB02AM8548": 1,
+        "WB70G3763": 1,
+        "WB02X8795": 1,
+        "WB06G4120": 1,
+        "WB02AH4655": 1,
+        "WB06J4432": 1,
+        "WB02AA5580": 1,
+        "KA19TR02": 1,
+        "TN21AT0492": 3,
+        "RJ27TC0530": 18,
+        "MH20CS9817": 2,
+        "KL05AK3300": 2,
+        "MP09CP9052": 1,
+        "TN43J0158": 1,
+        "KA18P2987": 3,
+        "MH12JC2813": 2,
+        "MH14DT8831": 3,
+        "UP50AS4535": 2,
+        "KL63C8800": 1,
+        "MH46X9996": 2,
+        "TN21AT0480": 4,
+        "HR26CK8571": 2,
+        "TN21AT0479": 2,
+        "MH20BY3665": 4,
+        "TN52U1580": 2,
+        "MH20CS1941": 4,
+        "TN59AQ1515": 2,
+        "TN66U8215": 2,
+        "HR26BR9044": 2,
+        "HR26DA5443": 1,
+        "HR26BP3543": 4,
+        "DL10CG4693": 2,
+        "KA01MA6989": 1,
+        "MH06AW8929": 4,
+        "KA51MJ8156": 2,
+        "HP896786": 2,
+        "KA04MN3622": 2,
+        "KA42TC131011": 1,
+        "KL38F5008": 1,
+        "KL10AV6342": 5,
+        "TN07BV5200": 2,
+        "DL758Y1790": 1,
+        "DL13S0155": 1,
+        "KL09AL9405": 2,
+        "MH20BY4465": 2,
+        "TN37CR4019": 2,
+        "KA03AB3380": 1,
+        "TN19H3322": 1,
+        "TERRANO": 1,
+        "TN45BA1065": 2,
+        "MH21V9926": 2,
+        "KL20K7561": 2,
+        "HR26CF5868": 1,
+        "TN21TC611": 1,
+        "DL6CM6683": 4,
+        "DL14CTC0153": 2,
+        "MH14EU3498": 2,
+        "KA05HS4495": 1,
+        "GJ07BR1336": 1,
+        "DL12CG6648": 1,
+        "DL6CAB123X": 2,
+        "W0BNP300": 1,
+        "KL06H5834": 1,
+        "MH20EU9991": 1,
+        "TN42R2697": 6,
+        "HR26DA0471": 3,
+        "HR26TC7303": 1,
+        "HR51AY9099": 2,
+        "GJW115A1138": 2,
+        "DL3CAY9324": 2,
+        "GJ05JH2501": 4,
+        "WB06F9209": 2,
+        "HR26U7501": 2,
+        "WB07D5106": 1,
+        "MH14TCD204": 1,
+        "HR26CT4063": 2,
+        "MH03BS7778": 6,
+        "KL01AX8000": 2,
+        "TN19TC91": 2,
+        "HR26CH3604": 2,
+        "MH14TC206AN": 1,
+        "MH12DE1433": 4,
+        "MH02CB4545": 2,
+        "MH14GN9239": 1,
+        "MH20TC640B": 1,
+        "HR11F7575": 2,
+        "MH14EP4660": 2,
+        "KA031351": 2,
+        "MH15TC554": 2,
+        "KL16J3636": 2,
+        "PB08CX2959": 3,
+        "UP16CT2233": 2,
+        "KA03MX5058": 1,
+        "TN21AU7234": 2,
+        "MH13BN4348": 1,
+        "DL3CAY2231": 2,
+        "MP09CC1667": 1,
+        "MH03CB6467": 2,
+        "MH14EH7958": 4,
+        "HR26DK0830": 2,
+        "MH20EE7597": 3,
+        "KL01CC50": 2,
+        "HR26TC7099": 1,
+        "TN59BE0939": 2,
+        "KL53E964": 2,
+        "KL54H369": 2,
+        "MH20EE7598": 4,
+        "MH14EY5972": 1,
+        "GJ01MW7581": 1,
+        "KL01KLKL01": 1,
+        "UK07BA7252": 1,
+        "RJ27TA1143": 1,
+        "KL01AU585": 1,
+        "TN09CH7770": 2,
+        "MH01AR5274": 3,
+        "MH02BK9793": 1,
+        "CG10S0650": 1,
+        "DL1N4268": 1,
+        "MH14TCF459": 1,
+        "RJ02CC0784": 2,
+        "KA29Z999": 2,
+        "DL12C3536": 2,
+        "HR99BJ6662": 2,
+        "MH01BU5207": 2,
+        "TS09EB1458": 1,
+        "MH20TC830C": 1,
+        "MH14TCE4": 1,
+        "KL60N5344": 4,
+        "DL7CN5617": 2,
+        "AS23M1264": 1,
+        "WB74X7605": 2,
+        "MH14TCF300": 1,
+        "MH20CS1938": 3,
+        "TN19TC94": 2,
+        "HR696969": 2,
+        "AP02BP2454": 2,
+        "KL02AF6363": 1,
+        "KL55R2473": 2,
+        "PB03AGT8979": 1,
+        "TN74AL5074": 2,
+        "TN02TC0143": 1,
+        "HR26DG6167": 2,
+        "KL65H4383": 2,
+        "MH02BM5048": 2,
+        "TN74AH1413": 2,
+        "TN07BU5427": 4,
+        "HR26CT6702": 4,
+        "MH20TC189B": 1,
+        "TN38BY4191": 2,
+        "GJ05JD9759": 1,
+        "UP16TC1366": 1,
+        "MH14EH5819": 2,
+        "HR99EX6037": 2,
+        "Devanagri": 1,
+        "HR26BA8008": 2,
+        "TN28BA9999": 2,
+        "TN74F3339": 2,
+        "MH20DJ0419": 2,
+        "MH20CS4946": 2,
+        "KA03NA8385": 2,
+        "HR26CR3302": 2,
+        "MH02AJ344": 1,
+        "KA21M5519": 1,
+        "KL43B2344": 2,
+        "KL454455": 2,
+        "KL10AW2814": 4,
+        "KL01KL0KL01": 2,
+        "HR26CP3135": 1,
+        "CRETA": 1,
+        "DUSTER": 1,
+        "MH01AV8866": 2,
+        "HR26CM6005": 2,
+        "TS08ER1643": 2,
+        "AP28N3107": 1,
+        "KA05MQ92": 1,
+        "KA5122727": 1,
+        "MH02CT2727": 1,
+        "TN99F2378": 2,
+        "KL13AA6340": 1,
+        "KL57A111": 1,
+        "MH14TCF460": 2,
+        "MH01AE8017": 2,
+        "HR99HA4575": 1,
+        "MH20BN3525": 4,
+        "GJ7BB766": 1,
+        "MH14TC947": 1,
+        "CH01AN0001": 1,
+        "DL8CX4850": 1,
+        "GJ03JL0126": 1,
+        "HR26AZ5927": 1,
+        "HR26BC5514": 2,
+        "HR26BU0380": 1,
+        "HR26CB1900": 1,
+        "HR26CE1485": 1,
+        "HR26CU6799": 1,
+        "HR26DA2330": 2,
+        "KL01CA2555": 3,
+        "KA03MG2784": 1,
+        "KA05MG1909": 1,
+        "KL07CB8599": 2,
+        "KL10AV6633": 3,
+        "KL10AW2111": 2,
+        "KL12G7531": 2,
+        "KL54A2670": 1,
+        "MH04DW8351": 2,
+        "MH12BG7237": 1,
+        "MH12NE8922": 1,
+        "MH14DX9937": 1,
+        "MH15BD8877": 1,
+        "MH20BQ20": 1,
+        "MH20DV2362": 2,
+        "MH20EE045": 2,
+        "MH20EE0943": 2,
+        "MH20EJ0364": 1,
+        "TN19S4523": 1,
+        "TN21AU1153": 1,
+        "TN21BC6225": 1,
+        "TN21BY0166": 1,
+        "TN21BZ0768": 2,
+        "TN38BW1139": 2,
+        "TN58AM1": 2,
+        "UP32FH2653": 2,
+        "KA51AA3469": 1,
+        "KL07BF2007": 1,
+        "TN21TC31": 1,
+        "MH20EE7601": 1,
+        "ASM1634": 1,
+        "HR26TC5656": 1,
+        "HR26BU0375": 1,
+        "MH46Z8892": 1,
+        "UP65CM21149": 1,
+        "UP80CR00": 1,
+        "KL25B2001": 1,
+        "GJ051D9443": 1,
+        "GJ1KF1111": 1,
+        "KA04ME9869": 1,
+        "KA01D1330": 1,
+        "GJ17TC214": 1,
+        "HR26DK6475": 1,
+        "MH14TCP237": 1,
+        "KL49H5270": 1,
+        "KL07BF5000": 1,
+        "HPSX4000": 1,
+        "KA51MJ2143": 1,
+        "KL7BZ99": 1,
+        "PY01BL1155": 1,
+        "blur": 1,
+        "TN66T5836": 1,
+        "TN02BL9": 1,
+        "UP16AB3726": 1,
+        "MH02B16890": 1,
+        "RJ09C84382": 1,
+        "HD02NP0": 1,
+        "MH01DE2780": 1,
+        "MH03AR5549": 1,
+        "MH12FU1014": 1,
+        "MH43AF5037": 1,
+        "MH43BU2401": 1,
+        "MH46BV0688": 1,
+        "MH43BP8173": 1,
+        "MH46AD5258": 2,
+        "MH46BF2342": 1,
+        "MH47N4570": 3,
+        "MH03DV2010": 3,
+        "MH02EK0837": 8,
+        "MH05DS8679": 10,
+        "MH43AR5466": 1,
+        "MH43AL8464": 1,
+        "GJ15D0564": 2,
+        "DL3CCQ0107": 7,
+        "MH01AU0059": 17,
+        "MH05EJ3005": 1,
+        "MH47Y1124": 41,
+        "MH04EX7505": 2,
+        "MH01DB1477": 8,
+        "MH12RT1105": 2,
+        "MH02EZ2599": 1,
+        "MH02BQ9628": 20,
+        "MH02DQ0196": 6,
+        "MH43BK9513": 2,
+        "MH47AV6753": 11,
+        "MH12FT9458": 1,
+        "MH04JL5547": 3,
+        "MH03BS4060": 16,
+        "MH02WA8344": 1,
+        "MH04HM4154": 3,
+        "MH05DK1018": 4,
+        "MH03AT3856": 2,
+        "MH03CB0229": 1,
+        "MH03AR7140": 3,
+        "MH04JM8262": 1,
+        "MH03DK2961": 2,
+        "MH03AF1911": 1,
+        "MH01AM9839": 2,
+        "MH02DZ9898": 2,
+        "MH04JM3383": 1,
+        "MH01DB2561": 2,
+        "MH01BT4302": 1,
+        "MH01BM4824": 3,
+        "MH03DU5196": 3,
+        "MH01DK4867": 2,
+        "MH02CW8226": 2,
+        "MH02MA5324": 8,
+        "MH01AM5810": 3,
+        "MH01AX3070": 13,
+        "MH03CP1328": 10,
+        "MH01AM7014": 2,
+        "MH02BG9542": 6,
+        "GJ15CD0564": 2,
+        "MH02EK4399": 6,
+        "MH01DP5662": 1,
+        "MH02EN6828": 1,
+        "DL8CN6308": 7,
+        "MH47Y0205": 4,
+        "MH02EU4884": 4,
+        "MH02EK5817": 1,
+        "MH02DN8718": 14,
+        "MH03DA4505": 1,
+        "MH02EP4454": 1,
+        "MH02EZ6482": 1,
+        "MH03BS8519": 1,
+        "MH47AG4326": 1,
+        "MH02AQ2299": 5,
+        "MH47N2829": 3,
+        "MH02BT6482": 41,
+        "MH04HP6100": 2,
+        "MH01AV8814": 4,
+        "MH02BJ2456": 3,
+        "MH02BR4503": 1,
+        "ME02EE4077": 1,
+        "MH02EE8407": 11,
+        "MH02CL4017": 3,
+        "MH14DX9938": 5,
+        "MH02EU4077": 8,
+        "MH01BD2186": 2,
+        "MH02ER9194": 19,
+        "MH14FS5229": 1,
+        "MH01CT1710": 1,
+        "MH14FM6930": 1,
+        "MH02EP5740": 2,
+        "GJ12FA0735": 1,
+        "MH02DS3099": 2,
+        "MH04DW9020": 7,
+        "MH01CT9150": 9,
+        "MH01AH8495": 7,
+        "MH02AK5481": 2,
+        "MH01BU1852": 6,
+        "MH01AV7461": 12,
+        "MH02JA9655": 1,
+        "MH01JA8939": 3,
+        "MH01AX1113": 2,
+        "MH01AL9693": 5,
+        "MH04GM7982": 2,
+        "MH02DJ8952": 4,
+        "MH02DW8021": 11,
+        "MH02DN6980": 1,
+        "MH01BY7658": 2,
+        "MH03CS6266": 27,
+        "MH01CV6333": 3,
+        "MH01CY6333": 1,
+        "MH02DS9365": 34,
+        "PB11AG0774": 5,
+        "MH06AZ3571": 1,
+        "MH01BD1897": 1,
+        "MHD1CV9311": 2,
+        "MH02CD3654": 3,
+        "MH02EE6842": 3,
+        "MH03AM3025": 3,
+        "MH12DG7144": 1,
+        "MH02CR4364": 3,
+        "MH01BG7161": 6,
+        "MH4705851": 17,
+        "MH47AZ8323": 1,
+        "MH02EH1077": 1,
+        "MH02CR8276": 2,
+        "MH01BT9066": 4,
+        "MH02FD6534": 1,
+        "MH47AU1306": 3,
+        "MH010PO323": 1,
+        "MH01CR7388": 5,
+        "MH12SF3212": 3,
+        "MH02DS4676": 1,
+        "MH01BT0050": 5,
+        "MH038C6247": 1,
+        "MH02CD7733": 2,
+        "MH04CT3566": 4,
+        "MH01DT1917": 10,
+        "MH02FN2783": 9,
+        "MH48AW0091": 1,
+        "MH01CP2655": 1
+      },
+      "image_formats": {
+        ".jpg": 1339,
+        ".jpeg": 306,
+        ".png": 53
+      },
+      "split_images": {
+        "train": 1358,
+        "val": 143,
+        "test": 193
+      },
+      "total_images": 1698,
+      "total_label_files": 1697,
+      "plate_annotations": 1694,
+      "empty_labels": 0,
+      "missing_labels": [
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/ML/ML39.jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-MH20EE7598_00000.jpeg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-TN99F2378_00000.jpeg"
+      ],
+      "orphan_labels": [
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/MH/MH5.xml: referenced image not found: /Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/MH/MH5.jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/ML/ML39.xml: referenced image not found: /Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/ML/NL1.jpg"
+      ],
+      "corrupt_images": [],
+      "jpeg_eoi_warnings": [
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/092c497e-623d-499d-822a-4b01c657389b___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_nissan-terrano-rear-left-rim.jpg",
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/video_images/car-wbs-MH03AR5549_00000.jpg"
+      ],
+      "malformed_annotations": [
+        "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/HP/HP20.xml:object 1: invalid pixel box [44.0, 158.0, 98.0, 175.0] for 272x153"
+      ],
+      "duplicate_groups": 48,
+      "duplicate_images": 48,
+      "accepted_before_dedup": 1694,
+      "contributed": {
+        "train": 1288,
+        "val": 127,
+        "test": 183
+      },
+      "duplicates_skipped": 0,
+      "conflicts_rejected": 96
+    },
+    "kaggle3": {
+      "path": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 3",
+      "annotation_format": "YOLO detection",
+      "data_yaml": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 3/data.yaml",
+      "declared_class_names": [
+        "number_plate"
+      ],
+      "original_class_ids": [
+        0
+      ],
+      "object_names": {},
+      "image_formats": {
+        ".jpg": 46
+      },
+      "split_images": {
+        "train": 10,
+        "val": 8,
+        "test": 28
+      },
+      "total_images": 46,
+      "total_label_files": 46,
+      "plate_annotations": 56,
+      "empty_labels": 0,
+      "missing_labels": [],
+      "orphan_labels": [],
+      "corrupt_images": [],
+      "jpeg_eoi_warnings": [],
+      "malformed_annotations": [],
+      "duplicate_groups": 0,
+      "duplicate_images": 0,
+      "accepted_before_dedup": 46,
+      "contributed": {
+        "train": 10,
+        "val": 8,
+        "test": 28
+      },
+      "duplicates_skipped": 0,
+      "conflicts_rejected": 0
+    }
+  },
+  "normalization": {
+    "final_class_id": 0,
+    "final_class_name": "license_plate",
+    "axis_aligned_yolo": true,
+    "readable_source_jpegs_with_eoi_repaired_in_copy": 9
+  },
+  "deduplication": {
+    "method": "SHA-256 over decoded RGB dimensions and pixels",
+    "exact_duplicate_groups_found": 48,
+    "exact_duplicate_images_beyond_unique": 48,
+    "duplicates_skipped": 0,
+    "conflicting_images_rejected": 96,
+    "duplicate_groups": [],
+    "conflicting_groups": [
+      {
+        "hash": "02102e9c48dda9cc5acad08838b801e11f87a0bb17793689cb6511c891f6396b",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/4434b404-dd10-4150-b226-b76b6ef95e43___new_224489195_8_1000x700_skoda-superb-2010-.jpg.jpeg",
+            "boxes": [
+              [
+                0.5617128463476071,
+                0.7388663967611336,
+                0.4181360201511335,
+                0.20647773279352227
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL01AX8000_00000.jpeg",
+            "boxes": [
+              [
+                0.5617128463476071,
+                0.7307692307692307,
+                0.3979848866498741,
+                0.17408906882591094
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "02880b6b9494374b8e517020c424bf45bc6a5e9e83a132162fd805c2de140517",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/b117ba53-d563-49c2-806b-343666616815___new_Maruti-Suzuki-recalls-75419-Baleno-cars-1961-DZire-cars-only-AGS-variant-Motown-India-Bureau-2-810.jpg.jpeg",
+            "boxes": [
+              [
+                0.5283911671924291,
+                0.6069767441860465,
+                0.305993690851735,
+                0.13488372093023257
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CR3302_00000.jpeg",
+            "boxes": [
+              [
+                0.5299684542586751,
+                0.6069767441860465,
+                0.3028391167192429,
+                0.14418604651162792
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "08f5598ac35774de869c56616ce7bd35e9a0af2bb2916e98184e29ddc803946d",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/11832b13-d514-4f1d-967c-d00e76d21e9b___Yellow-Number-Plate-With-Black-Lettering.jpg.jpeg",
+            "boxes": [
+              [
+                0.303156146179402,
+                0.5383480825958702,
+                0.20431893687707642,
+                0.11504424778761062
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/af36405d-be93-4c8c-b1b2-5a0832535eeb___main-qimg-4caf07f4dfd9e2a2d279ddd54fb91986-c.jpg.jpeg",
+            "boxes": [
+              [
+                0.3023255813953488,
+                0.5353982300884956,
+                0.2026578073089701,
+                0.11504424778761062
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "11ccec477413d0ef38461b4531f2666f3cdd6db5c87ef821cd814de22a5188d0",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/1438b735-2d21-4879-8ed4-e5fa086e70c8___Maruti-Suzuki-Swift-Dzire-1.jpg.jpeg",
+            "boxes": [
+              [
+                0.5158102766798419,
+                0.699017199017199,
+                0.2845849802371542,
+                0.09090909090909091
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26BP3543_00001.jpeg",
+            "boxes": [
+              [
+                0.516798418972332,
+                0.6965601965601965,
+                0.2826086956521739,
+                0.09090909090909091
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "17e4102d3198a37de7493334ed931f2ba51dd8deef3635282b85dccc74773992",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL07CB8599_00000.jpeg",
+            "boxes": [
+              [
+                0.545,
+                0.5444839857651246,
+                0.238,
+                0.099644128113879
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/dc8bb609-7086-431b-9c8b-9520975dabd2___822716205_6_1080x720_maruti-suzuki-ciaz-make-year-2014-petrol-.jpg.jpeg",
+            "boxes": [
+              [
+                0.545,
+                0.5355871886120996,
+                0.234,
+                0.11743772241992882
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "1a7d2dbb37a2a8d6f79942fc51bafd458f998a533e0149a537e131d2f9c99662",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/97846647-16f1-4ee2-b260-60774a21cc74___new_Maruti-Suzuki-Swift-Dzire-1.jpg.jpeg",
+            "boxes": [
+              [
+                0.5484848484848485,
+                0.6142322097378277,
+                0.43636363636363634,
+                0.14232209737827714
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26BP3543_00000.jpeg",
+            "boxes": [
+              [
+                0.546969696969697,
+                0.6104868913857678,
+                0.43333333333333335,
+                0.1348314606741573
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "20b5e46a0d4b48a9409d2947075621ae7a6bd44277edbea7ce5fcf0a581c1171",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/3c0a3772-d18d-4ff7-861c-7e50b7974edb___1393874-take-look-number-plate-imageuploadedbyteambhp1437414250.447892.jpg.jpeg",
+            "boxes": [
+              [
+                0.524468085106383,
+                0.592,
+                0.3893617021276596,
+                0.144
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-GJW115A1138_00000.jpeg",
+            "boxes": [
+              [
+                0.5255319148936171,
+                0.588,
+                0.3872340425531915,
+                0.136
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "212718eb790350320b76114a5996e248d969a9b01d62758465edca3acb8d91ef",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/3d7cd880-ea4b-4d63-9706-bea1df54af20___135712d1400874352-skoda-rapid-1-6tdi-cr-mt-elegance-ultima-candy-white-white-monster-1911216_676392609084007_1524722860_o.jpg.jpeg",
+            "boxes": [
+              [
+                0.511703511053316,
+                0.6774580335731415,
+                0.25097529258777634,
+                0.11270983213429256
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-DL3CAY9324_00000.jpeg",
+            "boxes": [
+              [
+                0.5110533159947984,
+                0.6774580335731415,
+                0.24187256176853056,
+                0.10311750599520383
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "2351d137596cf711e05bf4e1b49375d7db2ef263d63ebe9b6d805ef2c9dc56bb",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/22dc6b5f-ff5d-4bb4-beb2-0f5fd9e75787___i10_Latest_Acrylic_Number_Plate.jpg.jpeg",
+            "boxes": [
+              [
+                0.4899193548387097,
+                0.6585365853658537,
+                0.39919354838709675,
+                0.1602787456445993
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL04AL4405_00000.jpeg",
+            "boxes": [
+              [
+                0.4879032258064516,
+                0.6585365853658537,
+                0.3951612903225806,
+                0.14634146341463414
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "2971fff60018640fc7e74cf3ec276ae30e434d0106791aa651da83091e8d3a30",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/1a0da3dc-6667-4092-bc2a-a541a06f1e90___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_Nissan-Terrano9.jpg",
+            "boxes": [
+              [
+                0.5135869565217391,
+                0.7146739130434783,
+                0.30978260869565216,
+                0.07789855072463768
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KA04MN3622_00000.jpg",
+            "boxes": [
+              [
+                0.5135869565217391,
+                0.7137681159420289,
+                0.3134057971014493,
+                0.06884057971014493
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "29b10ce6fcd4d3cda830919e0ffab20e3bf385703ea6b107a02e3075810e244a",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/49bdf0d9-4e64-41eb-9c19-eabdc4afb051___Maruti-Suzuki-Ciaz-Photos-30.JPG.jpeg",
+            "boxes": [
+              [
+                0.4608333333333333,
+                0.4629080118694362,
+                0.26166666666666666,
+                0.12462908011869436
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CH3604_00000.jpeg",
+            "boxes": [
+              [
+                0.45916666666666667,
+                0.46142433234421365,
+                0.255,
+                0.12166172106824925
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "3290cc8f725a88d0bb7192f1780dcd0aa596234af63323bf153511f83981d6ad",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/8c4371ee-a997-4b21-82c4-cb5e767c4d06___kia-sorento-spied-in-India.jpg.jpeg",
+            "boxes": [
+              [
+                0.44696969696969696,
+                0.4664351851851852,
+                0.19393939393939394,
+                0.0625
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-AP02BP2454_00000.jpeg",
+            "boxes": [
+              [
+                0.4462121212121212,
+                0.47337962962962965,
+                0.19242424242424241,
+                0.07175925925925926
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "402b33c8fc8f9be404941779f7a53f920aab93730da3623d9bf4a4ee0762608b",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/89d26be7-258a-4470-b0fe-d1df57b20d55___new_Skoda-Octavia-5.jpg.jpeg",
+            "boxes": [
+              [
+                0.3703071672354949,
+                0.6631419939577039,
+                0.10921501706484642,
+                0.0634441087613293
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/f7621229-eebc-4dff-aef8-e79fac571be4___Skoda-Octavia-5.jpg.jpeg",
+            "boxes": [
+              [
+                0.36860068259385664,
+                0.6646525679758308,
+                0.10580204778156997,
+                0.06646525679758308
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "4b9001d324bd88731a7a86a636c6f7f63ee4d6b978e1cf7de3e9c31021ffd1b9",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/0369b20e-b432-4409-90f9-2420877aa386___8151536c79159a1557421da5f27f9f0e.jpg.jpeg",
+            "boxes": [
+              [
+                0.8208333333333333,
+                0.6875,
+                0.24583333333333332,
+                0.07083333333333333
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL05AK3300_00000.jpeg",
+            "boxes": [
+              [
+                0.8229166666666666,
+                0.6885416666666667,
+                0.24166666666666667,
+                0.06875
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "4de7ab382dc5049d9840c2a4d4c77fae1de017007e85c4c52476b0c1f96e5d92",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/a970d6e0-5948-4412-a1ec-67c5240722a8___images-gallery-misc4-250x250.jpg.jpeg",
+            "boxes": [
+              [
+                0.422,
+                0.47289156626506024,
+                0.732,
+                0.608433734939759
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26BA8008_00000.jpeg",
+            "boxes": [
+              [
+                0.424,
+                0.4939759036144578,
+                0.736,
+                0.5903614457831325
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "536a5bf4292e83351b180d34b0b1171a07a851155f1c3d683ab4371823888f38",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/bbf22d00-3dd6-4338-b701-264e0c0c0aff___Maruti-Swift-DZire-Photos-1.jpg.jpeg",
+            "boxes": [
+              [
+                0.48984771573604063,
+                0.5281837160751566,
+                0.3333333333333333,
+                0.09603340292275574
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CM6005_00000.jpeg",
+            "boxes": [
+              [
+                0.48984771573604063,
+                0.5219206680584552,
+                0.3299492385786802,
+                0.10020876826722339
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "59cc86d3c553c67d80a6786a56e312a05dd9f644a39dd780fde859de886cb3d8",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/07aaab79-71ee-4ea3-a9e6-640191183947___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_1208484d1392541449-nissan-terrano-official-review-img_20140215_181708.jpg",
+            "boxes": [
+              [
+                0.6362336601307189,
+                0.7334558823529411,
+                0.20955882352941177,
+                0.06576797385620915
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KA18P2987_00000.jpg",
+            "boxes": [
+              [
+                0.6345996732026143,
+                0.7297794117647058,
+                0.20220588235294118,
+                0.06658496732026144
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "5ca0022a44777d069b73bd468ce4acf8ca894216ec726ac9a176befbb9cab823",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/41de2ad0-3785-488e-9f1f-75b76f446cc7___Maruti-Alto-K10-Photos-2.jpg.jpeg",
+            "boxes": [
+              [
+                0.4822222222222222,
+                0.790167865707434,
+                0.38666666666666666,
+                0.11750599520383694
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CT4063_00000.jpeg",
+            "boxes": [
+              [
+                0.4811111111111111,
+                0.7889688249400479,
+                0.3711111111111111,
+                0.11510791366906475
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "637e95dbfff7250e6312c6b22469c73a42326c5ac4ea74250fe0e220132f21a2",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/a9268f51-fbb4-42c2-b88c-f5ef9f8ead42___2266_7T4G0510.JPG.jpeg",
+            "boxes": [
+              [
+                0.494,
+                0.6658653846153846,
+                0.388,
+                0.125
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR99EX6037_00000.jpeg",
+            "boxes": [
+              [
+                0.492,
+                0.6658653846153846,
+                0.388,
+                0.1201923076923077
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "718811ea440f6af91965a56f475d8f22b4d37d5288cab44939bcac0ed8592ee3",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/27bfd7b7-6e0c-454c-b9f3-7a44d36edb9c___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_nissan-terrano-rear-right-side-angle-view.jpg",
+            "boxes": [
+              [
+                0.22857142857142856,
+                0.6933333333333334,
+                0.19714285714285715,
+                0.14095238095238094
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-DL6CM6683_00000.jpg",
+            "boxes": [
+              [
+                0.22857142857142856,
+                0.6904761904761905,
+                0.19428571428571428,
+                0.13142857142857142
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "74047f7d2974c0e29f111beda063aea124fff21f157671218c561eedd63cb4b9",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/52b45060-9645-47c7-882d-b69a5bf07eff___1006372d1351343820-my-new-maruti-swift-zxi-21102012241.jpg.jpeg",
+            "boxes": [
+              [
+                0.564,
+                0.7121535181236673,
+                0.252,
+                0.08102345415778252
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KA031351_00000.jpeg",
+            "boxes": [
+              [
+                0.563,
+                0.7110874200426439,
+                0.25,
+                0.07462686567164178
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "750af10e1a8aca2f1239cca85f43ad3644d878d24eb5188452b7bcef4c3a910a",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/377b225b-e978-4e7c-8e5e-f10d8effc336___Maruti-Suzuki-Ignis-Rear-view-94486.jpg.jpeg",
+            "boxes": [
+              [
+                0.3908333333333333,
+                0.7522255192878339,
+                0.2683333333333333,
+                0.1394658753709199
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26DA0471_00000.jpeg",
+            "boxes": [
+              [
+                0.39166666666666666,
+                0.7477744807121661,
+                0.26,
+                0.142433234421365
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "7ef65bfafdd6fd10b9a884882d07358be43be879e6acf20bc9b5f92fdb3aa907",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/a615016b-4d07-46c7-a52b-8d4319fe3a10___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_nissan-terrano-rear-view.jpg",
+            "boxes": [
+              [
+                0.505,
+                0.7161904761904762,
+                0.15,
+                0.05333333333333334
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-DL6CM6683_00001.jpg",
+            "boxes": [
+              [
+                0.5057142857142857,
+                0.7161904761904762,
+                0.14857142857142858,
+                0.049523809523809526
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "80c1fbdbd59a8d01f05532c995a467da614664b499b7a8b2c0880301efe8ff80",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/5231116f-7a07-4ce2-b437-d34b497e7969___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_844329566_3_1080x720_nissan-terrano-xe-d-2014-diesel-.jpg",
+            "boxes": [
+              [
+                0.4981481481481482,
+                0.5041666666666667,
+                0.3037037037037037,
+                0.058333333333333334
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR11F7575_00000.jpg",
+            "boxes": [
+              [
+                0.49444444444444446,
+                0.50625,
+                0.3,
+                0.05694444444444444
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "854b2e2eb27c4bb1e3c1ff70edf7b7280fae92e979f97c53c087505eda46909e",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/8b9e7112-9149-48fb-b8e8-c3e89cce5af0___1074650_10201043987997310_227646612_o.jpg.jpeg",
+            "boxes": [
+              [
+                0.6007259528130672,
+                0.6153846153846154,
+                0.3629764065335753,
+                0.12307692307692308
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR696969_00000.jpeg",
+            "boxes": [
+              [
+                0.5998185117967332,
+                0.6142857142857143,
+                0.36116152450090744,
+                0.11208791208791209
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "8f59d0c730d116ca1e537234a48aa276f03f2e583d8847aef4d064e5bb09bc34",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/20dd73fd-9e05-4bdc-b380-d8148b194ae7___Maruti-Swift-Number-Plates-Design.jpg.jpeg",
+            "boxes": [
+              [
+                0.6192708333333333,
+                0.43472222222222223,
+                0.5447916666666667,
+                0.2722222222222222
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/9cd75347-8952-40b1-97c5-d628f1b59590___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_Maruti-Swift-Number-Plates-Design.jpg",
+            "boxes": [
+              [
+                0.6171875,
+                0.43680555555555556,
+                0.5489583333333333,
+                0.2652777777777778
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "930427a9bfe4e81824e019b361878dbabe5712c9518a364a85360e47645db8f9",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26DA2330_00000.jpeg",
+            "boxes": [
+              [
+                0.16732673267326734,
+                0.6618075801749271,
+                0.23564356435643563,
+                0.11661807580174927
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/e204c50d-b861-4f68-827f-575351d150b4___Maruti-Baleno-RS-4.jpg.jpeg",
+            "boxes": [
+              [
+                0.16534653465346535,
+                0.6632653061224489,
+                0.23564356435643563,
+                0.11370262390670553
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "9356047da98182858c8b479ebde57d5a97b7e0e9e7c819a3ea165b45b7a615fe",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/aff1f53b-3259-44f0-9718-05fb64dc8ba1___Untitled.png",
+            "boxes": [
+              [
+                0.3684210526315789,
+                0.4902597402597403,
+                0.27146814404432135,
+                0.07142857142857142
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KA03NA8385_00000.png",
+            "boxes": [
+              [
+                0.37257617728531855,
+                0.4935064935064935,
+                0.26869806094182824,
+                0.07142857142857142
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "9736bf57175622a69f9d81c0af0bb33d1a828f7e439a49ce673829e70358f7c0",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/78a85f8b-de01-4036-ae91-2a1fa48bcf9f___new_995920d1349421647-cappuccino-beige-czech-tank-here-my-skoda-laura-2-0-elegance-mt-20121005_121433.jpg.jpeg",
+            "boxes": [
+              [
+                0.484,
+                0.7312312312312312,
+                0.376,
+                0.13513513513513514
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KA29Z999_00000.jpeg",
+            "boxes": [
+              [
+                0.486,
+                0.7312312312312312,
+                0.38,
+                0.12912912912912913
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "98582992c4fd0a4c43a15943c7ad032eec8df32a2264e9f0d14c7420bd8b057d",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-GJ05JH2501_00001.jpg",
+            "boxes": [
+              [
+                0.45792079207920794,
+                0.4354166666666667,
+                0.29207920792079206,
+                0.04583333333333333
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/f94e9bcf-ec4a-418a-8685-14b71b82a039___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_848126147_1_1080x720_nissan-terrano-xl-d-plus-2014-diesel-surat.jpg",
+            "boxes": [
+              [
+                0.4591584158415842,
+                0.4361111111111111,
+                0.28465346534653463,
+                0.041666666666666664
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "98967d1c79298c31e4ecb261d04c1f1bccb54fe42c156b9bd197ee56a5cdc170",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/15e7c19f-da3c-4f0d-91f3-552afabc8961___41FxrEl7jHL.jpg.jpeg",
+            "boxes": [
+              [
+                0.513,
+                0.501984126984127,
+                0.446,
+                0.21825396825396826
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-DL10CG4693_00000.jpeg",
+            "boxes": [
+              [
+                0.517,
+                0.5,
+                0.446,
+                0.20634920634920634
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "9c39838a9865fcfaf19428fc0e6a488229723923ea22704b099673d12346b6e1",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/9f7c7dce-f9c9-4c95-a053-8f16e6e99466___new_new-maruti-alto-k10-2_625x300_41414071192.jpg.jpeg",
+            "boxes": [
+              [
+                0.5400943396226415,
+                0.7369477911646586,
+                0.4056603773584906,
+                0.1566265060240964
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CT6702_00001.jpeg",
+            "boxes": [
+              [
+                0.5400943396226415,
+                0.7389558232931727,
+                0.4009433962264151,
+                0.15261044176706828
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "9da4fbe064a328a56b7bb6c2fa2cccf535534e39147d0793332c95b4cf1d7729",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/0b24d6ed-d32f-420d-bc18-03deece29073___2015-Maruti-Ciaz-Test-Drive-Review.jpg.jpeg",
+            "boxes": [
+              [
+                0.7179276315789473,
+                0.7615894039735099,
+                0.17269736842105263,
+                0.11258278145695365
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CK8571_00000.jpeg",
+            "boxes": [
+              [
+                0.7162828947368421,
+                0.7632450331125827,
+                0.16940789473684212,
+                0.10264900662251655
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "a24d988eed5444c090ccb628c2d83cf484f2db41eaca82d62a3c2a649c9c8368",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/369ccb4b-88fe-4e97-91c1-3838da2b7563___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_Honda-Jazz-Number-Plates-Designs.jpg",
+            "boxes": [
+              [
+                0.5091666666666667,
+                0.4166666666666667,
+                0.415,
+                0.2733333333333333
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/e7a86597-7251-4e9b-9469-cd873fe6736f___Honda-Jazz-Number-Plates-Designs.jpg.jpeg",
+            "boxes": [
+              [
+                0.51,
+                0.4211111111111111,
+                0.42,
+                0.2777777777777778
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "a43bb0522dac64e77a3e725397ab7ed99c706750d04644b3c8ead36fb1f08d56",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/3febea0e-53c0-4b30-880c-3061458b93ce___Maruti-Vitara-Brezza-rear-end-full-review.jpg.jpeg",
+            "boxes": [
+              [
+                0.6535714285714286,
+                0.5835322195704057,
+                0.31857142857142856,
+                0.29832935560859186
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26U7501_00000.jpeg",
+            "boxes": [
+              [
+                0.66,
+                0.5835322195704057,
+                0.3142857142857143,
+                0.29832935560859186
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "a4707f7f182686286108c5780c372d7c7be5bf979175f2d1b35750a7f8a34ff1",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/5cbd7465-ad12-4e6b-8eaf-d7056c3852f8___New-2018-Maruti-Suzuki-Swift-radiator-grille-600x398.jpg.jpeg",
+            "boxes": [
+              [
+                0.6925,
+                0.6658291457286433,
+                0.24833333333333332,
+                0.11557788944723618
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HRDK0830_00000.jpeg",
+            "boxes": [
+              [
+                0.695,
+                0.6670854271356784,
+                0.25,
+                0.12311557788944724
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "a51fccf9f9ee8d7fcb0d7ba3f9588a3b463afbcb4f184c447a9f039a8aa7fd96",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/c30a1535-9d8f-465e-a7f4-aa726f19f0b1___new-maruti-alto-k10-2_625x300_41414071192.jpg.jpeg",
+            "boxes": [
+              [
+                0.5130769230769231,
+                0.8012170385395537,
+                0.2630769230769231,
+                0.07707910750507099
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26CT6702_00000.jpeg",
+            "boxes": [
+              [
+                0.5138461538461538,
+                0.8062880324543611,
+                0.26461538461538464,
+                0.07910750507099391
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "a6034ebe404488d6843da5198815224c5e30c606a98ff8a563ac7c09dc9e4b18",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/5747d3e8-4dd0-435f-942d-34b84f03344c___Maruti-Suzuki-Swift-Number-Plates-Design.jpg.jpeg",
+            "boxes": [
+              [
+                0.479,
+                0.6441860465116279,
+                0.39,
+                0.12093023255813953
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL10AV6342_00000.jpeg",
+            "boxes": [
+              [
+                0.478,
+                0.6476744186046511,
+                0.388,
+                0.1186046511627907
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "a821cbae2ff2d0b3ace65be6d63f956accb66a40bdef5a24bb5bdb76763bd6d1",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/59e121dc-ebc6-4e4c-ba88-7fe04b569218___Autopsyches-Skoda-Laura-6.jpg.jpeg",
+            "boxes": [
+              [
+                0.4972972972972973,
+                0.48367346938775513,
+                0.21351351351351353,
+                0.08163265306122448
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-DL3CAY2231_00000.jpeg",
+            "boxes": [
+              [
+                0.49864864864864866,
+                0.4816326530612245,
+                0.20810810810810812,
+                0.06938775510204082
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "ac6eadae5d9158d6bf951d9ec6f5106cb4a8fc536017d2e2402893b5e6fa6bd6",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL01CA2555_00000.jpeg",
+            "boxes": [
+              [
+                0.649,
+                0.5615671641791045,
+                0.374,
+                0.2126865671641791
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/d779f6f0-5731-48ed-bd43-836a3f7f2013___product-500x5000.jpeg",
+            "boxes": [
+              [
+                0.648,
+                0.5597014925373134,
+                0.376,
+                0.21641791044776118
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "c2a1ae8a5173fa696b3843fd40cc6675e9aaa6bf35807095d4061a32ee797da9",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/3bc3f147-2d6b-484a-8481-4a49fd8afe23___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_844581764_1_1080x720_nissan-terrano-xv-d-thp-110-ps-2013-diesel-faridabad.jpg",
+            "boxes": [
+              [
+                0.5416666666666666,
+                0.7409722222222223,
+                0.37222222222222223,
+                0.05694444444444444
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR51AY9099_00000.jpg",
+            "boxes": [
+              [
+                0.5416666666666666,
+                0.7388888888888889,
+                0.37222222222222223,
+                0.05277777777777778
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "c8607f0ef8c8c88ba407b072b237d2146ac5459dbf6c4dc464ccb350b8e584cd",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/18d2b870-7817-46da-a59a-6406c1b472c9___1033.png",
+            "boxes": [
+              [
+                0.4423076923076923,
+                0.703016241299304,
+                0.34134615384615385,
+                0.09280742459396751
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "val",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KA51MJ8156_00000.png",
+            "boxes": [
+              [
+                0.44350961538461536,
+                0.7018561484918794,
+                0.33413461538461536,
+                0.08120649651972157
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "c8b548748868193ec5d2fb2dd51f3b09959ec4a34e581b55467c05d09e4fe2fa",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/KA/KA1.jpg",
+            "boxes": [
+              [
+                0.49080882352941174,
+                0.680161943319838,
+                0.24632352941176472,
+                0.0728744939271255
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/State-wise_OLX/KA/KA19.jpg",
+            "boxes": [
+              [
+                0.49264705882352944,
+                0.6761133603238867,
+                0.2426470588235294,
+                0.0728744939271255
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "c8d4431abda537fe9fa98fa0072d6f6852784d0fe79ac558ec0294d349d6cc7b",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/93b6ca4e-17cc-4b12-b7f5-66fb37c6107c___number-plate-factory-fitted1.jpg.jpeg",
+            "boxes": [
+              [
+                0.5031152647975078,
+                0.5029761904761905,
+                0.32710280373831774,
+                0.1488095238095238
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR26DG6167_00000.jpeg",
+            "boxes": [
+              [
+                0.5015576323987538,
+                0.5029761904761905,
+                0.32398753894080995,
+                0.13690476190476192
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "d788f63ab850e69cebaab4bc142e5e88c3d95a1b57531bceac29e25d735f7c8c",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/7c8229d7-7e37-41a6-9262-d5da278c8d8e___139379d1243147524-ok-have-dealers-name-number-plate-1.jpg.jpeg",
+            "boxes": [
+              [
+                0.5375408052230686,
+                0.5140977443609023,
+                0.5114254624591947,
+                0.27631578947368424
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-HR99BJ6662_00000.jpeg",
+            "boxes": [
+              [
+                0.5386289445048966,
+                0.5159774436090225,
+                0.5114254624591947,
+                0.26879699248120303
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "d87852f0959c3bdebf5c066da1f953133323fa66a59b221485e1cf9730df0e86",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/b78553c7-977e-49a2-b3d2-42825d83c8b0___1557297d1474517501-toyota-innova-crysta-official-review-20160920_191445.jpg.jpeg",
+            "boxes": [
+              [
+                0.276,
+                0.5952380952380952,
+                0.328,
+                0.19298245614035087
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-KL01KL0KL01_00000.jpeg",
+            "boxes": [
+              [
+                0.277,
+                0.5977443609022557,
+                0.326,
+                0.18796992481203006
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "e32608f2a5d69ef179532aa99b5f22e5aab18d74ba3d0c3c8190e3c31b8bcc15",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/7c6227ed-9e92-4062-9591-b172cb32ec10___3e7fd381-0ae5-4421-8a70-279ee0ec1c61_Honda-Jazz-Front-Number-Plates-Designs.jpg",
+            "boxes": [
+              [
+                0.5441666666666667,
+                0.29777777777777775,
+                0.9083333333333333,
+                0.24444444444444444
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "test",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/fcabfaf7-160a-44bc-a543-9faee4c1c4cd___Honda-Jazz-Front-Number-Plates-Designs.jpg.jpeg",
+            "boxes": [
+              [
+                0.5475,
+                0.29888888888888887,
+                0.905,
+                0.23333333333333334
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "ed79fd80cf33acf81d1ea5dc5afeb168731121a156c82fb8ae5ff63004d12ae9",
+        "samples": [
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/79094948-25d3-418e-86fc-3c2d62917f62___513039-volkswagen-vento-test-drive-review-06032011612.jpg.jpeg",
+            "boxes": [
+              [
+                0.6358024691358025,
+                0.5774176954732511,
+                0.46219135802469136,
+                0.19393004115226337
+              ]
+            ]
+          },
+          {
+            "source": "kaggle2",
+            "split": "train",
+            "image": "/Users/gauravghanekar/Downloads/number_data/data/kaggle 2/google_images/car-wbs-DL12C3536_00000.jpeg",
+            "boxes": [
+              [
+                0.6365740740740741,
+                0.5763888888888888,
+                0.46219135802469136,
+                0.1918724279835391
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "split_images": {
+      "train": 7640,
+      "val": 1926,
+      "test": 1097
+    },
+    "total_images": 10663,
+    "total_plate_annotations": 10871,
+    "background_images": 151,
+    "corrupt_images": [],
+    "exact_duplicate_groups": [],
+    "cross_split_duplicate_leakage": []
+  },
+  "validation": {
+    "passed": true,
+    "label_report": {
+      "dataset": "/Users/gauravghanekar/Downloads/number_data/data/det_improved",
+      "splits": {
+        "train": {
+          "images": 7640,
+          "labels": 7640,
+          "empty_labels": 132,
+          "missing_labels": [],
+          "orphan_labels": []
+        },
+        "val": {
+          "images": 1926,
+          "labels": 1926,
+          "empty_labels": 19,
+          "missing_labels": [],
+          "orphan_labels": []
+        },
+        "test": {
+          "images": 1097,
+          "labels": 1097,
+          "empty_labels": 0,
+          "missing_labels": [],
+          "orphan_labels": []
+        }
+      },
+      "problems": []
+    },
+    "yaml_report": {
+      "path": "/Users/gauravghanekar/Downloads/number_data/reports/det_improved_runtime.yaml",
+      "resolved_root": "/Users/gauravghanekar/Downloads/number_data/data/det_improved",
+      "names": {
+        "0": "license_plate"
+      },
+      "nc": 1,
+      "issues": []
+    },
+    "ultralytics_targets": [
+      {
+        "split": "train",
+        "images": 7640,
+        "targets": 7749,
+        "unique_class_ids": [
+          0.0
+        ],
+        "finite": true,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      {
+        "split": "val",
+        "images": 1926,
+        "targets": 1999,
+        "unique_class_ids": [
+          0.0
+        ],
+        "finite": true,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      {
+        "split": "test",
+        "images": 1097,
+        "targets": 1123,
+        "unique_class_ids": [
+          0.0
+        ],
+        "finite": true,
+        "minimum": 0.0,
+        "maximum": 0.0
+      }
+    ],
+    "ultralytics_parser_error": null
+  },
+  "paths": {
+    "dataset": "/Users/gauravghanekar/Downloads/number_data/data/det_improved",
+    "data_yaml": "/Users/gauravghanekar/Downloads/number_data/data/det_improved/data.yaml",
+    "visual_audit": "/Users/gauravghanekar/Downloads/number_data/reports/det_improved_visual_audit.jpg",
+    "validation_report": "/Users/gauravghanekar/Downloads/number_data/reports/det_improved_validation.json"
+  }
+}

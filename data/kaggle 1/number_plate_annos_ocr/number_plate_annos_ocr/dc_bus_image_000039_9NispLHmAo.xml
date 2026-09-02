@@ -1,0 +1,37 @@
+<annotation>
+  <folder>dc</folder>
+  <filename>dc_bus_image_000039_9NispLHmAo.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>4160</width>
+    <height>3120</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>number_plate</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2437.4</xmin>
+      <ymin>2474.58</ymin>
+      <xmax>2744.63</xmax>
+      <ymax>2576.34</ymax>
+    </bndbox>
+    <attributes>
+      <attribute>
+        <name>number_plate_text</name>
+        <value>KL498262</value>
+      </attribute>
+      <attribute>
+        <name>rotation</name>
+        <value>0.0</value>
+      </attribute>
+    </attributes>
+  </object>
+</annotation>

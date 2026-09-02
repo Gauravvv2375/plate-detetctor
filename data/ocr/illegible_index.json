@@ -1,0 +1,507 @@
+{
+ "real_02b01d32ba61.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_6fedc866ae14.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_d362dd6885bf.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_72ccc710fbc4.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_813b32f53e55.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_5764c044997c.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_8efec21bccad.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_e0476612aec9.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_80d3a8ffdd3a.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_00ff387ef13e.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_acbe3957a266.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_47cdc8cd8752.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_ac63dabc939a.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_08fae149feab.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_a7850eb4729d.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_9488f853000d.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_f465a08a94a3.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_2f9b65548375.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_64656fecee39.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_aefbb5deba13.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_cd6513dbe77a.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_49635ace274f.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_cc888bae4353.jpg": [
+  "proj4",
+  "illegible",
+  "val"
+ ],
+ "real_2fc96f5004d6.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_08397cad17e8.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_b8cf128e6c9d.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_40b47778a62c.jpg": [
+  "proj4",
+  "illegible",
+  "test"
+ ],
+ "real_c93023e92e79.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_7cfbf449a3b5.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_ab59da38ff91.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_71969e7cd97a.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_4b6718089ed8.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_54caec10e28c.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_cea39a6f3b67.jpg": [
+  "proj6",
+  "unusable",
+  "test"
+ ],
+ "real_1f3946d949a8.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_23929c4d6241.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_65dfdc7c7ae8.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_b6e7f7a3d9f7.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_a58eb5c1cd92.jpg": [
+  "proj6",
+  "unusable",
+  "test"
+ ],
+ "real_a4005d7216f1.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_bf81e7dbc60a.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_ed3325a09098.jpg": [
+  "proj6",
+  "unusable",
+  "test"
+ ],
+ "real_d208dec1f1fc.jpg": [
+  "proj6",
+  "unusable",
+  "val"
+ ],
+ "real_c8edb73646fa.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_8338e5a65b44.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_534c76579844.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_3e33eb58450a.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_9884b35390af.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_8843d033e116.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_74f61a412af5.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_52cdbcb4e131.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_3c6af87fbb8d.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_07cf064ba6d2.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_ef33349ea9d0.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_41e9c1e5cacf.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_2535113abd5d.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_030b43047656.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_05b8ca182f78.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_ffb579370249.jpg": [
+  "proj6",
+  "unusable",
+  "train"
+ ],
+ "real_2554f1d7e9b9.jpg": [
+  "proj7",
+  "illegible",
+  "val"
+ ],
+ "real_09a07fa23b78.jpg": [
+  "proj7",
+  "illegible",
+  "val"
+ ],
+ "real_f97bc5d8c57f.jpg": [
+  "proj7",
+  "illegible",
+  "val"
+ ],
+ "real_dbb02b7dd89e.jpg": [
+  "proj7",
+  "illegible",
+  "val"
+ ],
+ "real_6bfd1b168d6f.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_66a404d9536a.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_db9c93b2ecc1.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_a80131748acc.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_3f4566bd7d3d.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_b31cad6d776f.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_04913c0545f6.jpg": [
+  "proj7",
+  "illegible",
+  "val"
+ ],
+ "real_8cbd01fdf06a.jpg": [
+  "proj7",
+  "illegible",
+  "val"
+ ],
+ "real_30c5df9a2ed7.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_747cdc4582a1.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_77521ffbfda7.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_b115dcc211f9.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_7d5aeaf712f2.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_7607e1678c6c.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_ac7215eb80cb.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_6ebf6835c9ef.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_42a353bd9d4a.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_7f6fc39a9fdc.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_f6a341229d5f.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_02016ac4247d.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_8a0079db8434.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_71e686818d7a.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_cc5e81874a04.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_253c3f9b4d4b.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_2930754875c2.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_3ceed139da34.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_0d749c6c4d51.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_03dc40798361.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_b360734f7ce9.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_96e233f39727.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_0e1dbe1b4af9.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_b1d0c603c171.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_cf3ebdb18e83.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_e7c1bd3d79cf.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_c73fd8409fa8.jpg": [
+  "proj7",
+  "illegible",
+  "train"
+ ],
+ "real_b54b3415c273.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_5c93e63bcc36.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ],
+ "real_8e860b9ed46f.jpg": [
+  "proj7",
+  "illegible",
+  "test"
+ ]
+}

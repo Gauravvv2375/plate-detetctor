@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>car-wbs-MH03AR5549_00000.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\Indian_ANPR_090921\video_images\car-wbs-MH03AR5549_00000.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4000</width>
+		<height>3000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH03AR5549</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1298</xmin>
+			<ymin>712</ymin>
+			<xmax>4000</xmax>
+			<ymax>1612</ymax>
+		</bndbox>
+	</object>
+</annotation>

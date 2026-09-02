@@ -1,0 +1,37 @@
+<annotation>
+  <folder>dc</folder>
+  <filename>dc_tempo_van__image_000489_73h4cMU8Z1.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>3000</width>
+    <height>4000</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>number_plate</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1099.21</xmin>
+      <ymin>2402.19</ymin>
+      <xmax>1499.9</xmax>
+      <ymax>2584.8</ymax>
+    </bndbox>
+    <attributes>
+      <attribute>
+        <name>number_plate_text</name>
+        <value>MP13GA9462</value>
+      </attribute>
+      <attribute>
+        <name>rotation</name>
+        <value>0.0</value>
+      </attribute>
+    </attributes>
+  </object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video3_1500.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video3_1500.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>358</width>
+		<height>435</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH14DX9938</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>93</xmin>
+			<ymin>339</ymin>
+			<xmax>248</xmax>
+			<ymax>385</ymax>
+		</bndbox>
+	</object>
+</annotation>

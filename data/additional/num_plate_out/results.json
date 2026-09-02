@@ -1,0 +1,34 @@
+{
+  "CRNN+CTC": {
+    "raw": [
+      "TN87C106"
+    ],
+    "stitched": [
+      "TN87C5106"
+    ]
+  },
+  "TrOCR": {
+    "raw": [
+      "TN87C5106"
+    ],
+    "stitched": [
+      "TN87C5106"
+    ]
+  },
+  "PARSeq": {
+    "raw": [
+      "TN87C5106"
+    ],
+    "stitched": [
+      "TN87C5106"
+    ]
+  },
+  "PP-OCRv6-ft": {
+    "raw": [
+      "TN87C5106"
+    ],
+    "stitched": [
+      "TN87C5106"
+    ]
+  }
+}

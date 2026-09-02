@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video4_3780.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video4_3780.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>985</width>
+		<height>838</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH02DW8021</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>233</xmin>
+			<ymin>369</ymin>
+			<xmax>417</xmax>
+			<ymax>426</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>car-ybs-MH43BP8173_00000.png</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\Indian_ANPR_090921\video_images\car-ybs-MH43BP8173_00000.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>456</width>
+		<height>487</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH43BP8173</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>181</xmin>
+			<ymin>351</ymin>
+			<xmax>329</xmax>
+			<ymax>399</ymax>
+		</bndbox>
+	</object>
+</annotation>

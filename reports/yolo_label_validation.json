@@ -1,0 +1,67 @@
+{
+  "dataset": "/Users/gauravghanekar/Downloads/number_data/data/det",
+  "splits": {
+    "train": {
+      "images": 6308,
+      "labels": 6308,
+      "empty_labels": 132,
+      "missing_labels": [],
+      "orphan_labels": []
+    },
+    "val": {
+      "images": 1784,
+      "labels": 1784,
+      "empty_labels": 19,
+      "missing_labels": [],
+      "orphan_labels": []
+    },
+    "test": {
+      "images": 883,
+      "labels": 882,
+      "empty_labels": 0,
+      "missing_labels": [
+        "0002a5b67e5f0909_jpg.rf.faf1b011433d7eefbc249c76e730e2aa_annotated"
+      ],
+      "orphan_labels": []
+    }
+  },
+  "problems": [],
+  "runtime_yaml": {
+    "path": "/Users/gauravghanekar/Downloads/number_data/reports/det_runtime.yaml",
+    "resolved_root": "/Users/gauravghanekar/Downloads/number_data/data/det",
+    "names": {
+      "0": "license_plate"
+    },
+    "nc": 1,
+    "issues": []
+  },
+  "removed_caches": [
+    "/Users/gauravghanekar/Downloads/number_data/data/det/labels/test.cache",
+    "/Users/gauravghanekar/Downloads/number_data/data/det/labels/train.cache",
+    "/Users/gauravghanekar/Downloads/number_data/data/det/labels/val.cache"
+  ],
+  "ultralytics_targets": [
+    {
+      "split": "train",
+      "images": 6308,
+      "targets": 6413,
+      "unique_class_ids": [
+        0.0
+      ],
+      "finite": true,
+      "minimum": 0.0,
+      "maximum": 0.0
+    },
+    {
+      "split": "val",
+      "images": 1784,
+      "targets": 1857,
+      "unique_class_ids": [
+        0.0
+      ],
+      "finite": true,
+      "minimum": 0.0,
+      "maximum": 0.0
+    }
+  ]
+}

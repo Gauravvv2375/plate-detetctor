@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>car-ybs-MH46BF2342_00000.png</filename>
+	<path>C:\Users\Siri\Desktop\BARC ki padhai\Project\Indian_ANPR_090921\video_images\car-ybs-MH46BF2342_00000.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>646</width>
+		<height>225</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH46BF2342</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>184</xmin>
+			<ymin>115</ymin>
+			<xmax>411</xmax>
+			<ymax>176</ymax>
+		</bndbox>
+	</object>
+</annotation>

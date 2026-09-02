@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_images</folder>
+	<filename>car-wbs-MH01DE2780_00000.png</filename>
+	<path>C:\Users\Siri\Desktop\BARC ki padhai\Project\Indian_ANPR_090921\video_images\car-wbs-MH01DE2780_00000.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>731</width>
+		<height>425</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH01DE2780</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>480</xmin>
+			<ymin>206</ymin>
+			<xmax>629</xmax>
+			<ymax>253</ymax>
+		</bndbox>
+	</object>
+</annotation>

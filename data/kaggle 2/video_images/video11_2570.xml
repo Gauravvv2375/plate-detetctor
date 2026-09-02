@@ -1,0 +1,26 @@
+<annotation>
+	<folder>video_screenshots</folder>
+	<filename>video11_2570.jpg</filename>
+	<path>C:\Users\Siri\Desktop\BARC_ki_padhai\Project\video_screenshots\video11_2570.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>822</width>
+		<height>560</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MH04JL5547</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>234</xmin>
+			<ymin>158</ymin>
+			<xmax>449</xmax>
+			<ymax>291</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,60 @@
+{
+  "dataset": "/Users/gauravghanekar/Downloads/number_data/data/det_improved",
+  "splits": {
+    "train": {
+      "images": 7640,
+      "labels": 7640,
+      "empty_labels": 132,
+      "missing_labels": [],
+      "orphan_labels": []
+    },
+    "val": {
+      "images": 1926,
+      "labels": 1926,
+      "empty_labels": 19,
+      "missing_labels": [],
+      "orphan_labels": []
+    },
+    "test": {
+      "images": 1097,
+      "labels": 1097,
+      "empty_labels": 0,
+      "missing_labels": [],
+      "orphan_labels": []
+    }
+  },
+  "problems": [],
+  "runtime_yaml": {
+    "path": "/Users/gauravghanekar/Downloads/number_data/reports/det_improved_runtime.yaml",
+    "resolved_root": "/Users/gauravghanekar/Downloads/number_data/data/det_improved",
+    "names": {
+      "0": "license_plate"
+    },
+    "nc": 1,
+    "issues": []
+  },
+  "ultralytics_targets": [
+    {
+      "split": "train",
+      "images": 7640,
+      "targets": 7749,
+      "unique_class_ids": [
+        0.0
+      ],
+      "finite": true,
+      "minimum": 0.0,
+      "maximum": 0.0
+    },
+    {
+      "split": "val",
+      "images": 1926,
+      "targets": 1999,
+      "unique_class_ids": [
+        0.0
+      ],
+      "finite": true,
+      "minimum": 0.0,
+      "maximum": 0.0
+    }
+  ]
+}
