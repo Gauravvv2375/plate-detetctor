@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checked_samples": 80000,
+  "missing_images": [],
+  "malformed_labels": [],
+  "duplicate_charset_entries": false,
+  "charset_matches_labels": true,
+  "train_validation_group_overlap": [],
+  "train_validation_label_overlap": [],
+  "zero_width_characters": [],
+  "control_characters": []
+}

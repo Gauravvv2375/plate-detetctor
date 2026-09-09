@@ -1,0 +1,18 @@
+{
+  "accepted": {
+    "14": ["car", "Devanagari", "Small Marathi text on mounted rear plate; oblique view"],
+    "16": ["car", "Devanagari", "Small Marathi header and decorative marking above registration"],
+    "32": ["car", "Devanagari", "Small Devanagari side text on plate; lateral text may not be classified HEADER"],
+    "36": ["car", "Devanagari", "Small Devanagari header above large stylized digits"],
+    "42": ["motorcycle", "Devanagari", "Small Marathi header on mounted motorcycle plate"],
+    "45": ["scooter", "Devanagari", "Small Marathi header on mounted scooter plate; overhead perspective"],
+    "58": ["motorcycle", "Devanagari", "News composite includes full motorcycle and enlarged view of same plate; ONE source, not two samples"],
+    "65": ["car", "Devanagari", "Devanagari RTO prefix above number on old Ambassador; header-like training candidate, not decorative header; preserve two-row registration classification"],
+    "175": ["car", "Devanagari", "Separate official Devanagari placard immediately above registration plate; adjacent-header case, not on same plate substrate"]
+  },
+  "duplicates": {"35":14,"37":14,"83":49,"82":9,"113":59,"114":59,"122":81,"127":81,"129":128,"181":111},
+  "preexisting_duplicates": {"40":"images_1581599221866_marathi_number_plate.webp"},
+  "approved_crops": ["header_000016_p1_r1.png","header_000036_p1_r1.png"],
+  "rejected_extractions": {"32":"Detector classified Latin registration prefix as HEADER; useful Devanagari side text was missed"},
+  "notes": "Visual suitability review by assistant is NOT manual ground-truth verification. All accepted samples remain NEEDS_REVIEW. Other downloads rejected for no useful plate-associated Devanagari header, product/mockup, non-Indian vehicle, montage, or unusable header pixels. ID 61 has stylized Latin plate text and Devanagari only on a distant body sticker; rejected after full-size inspection."
+}

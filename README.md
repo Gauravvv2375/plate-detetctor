@@ -122,12 +122,49 @@ Ultralytics is pinned above 8.3.203 because that release used non-blocking tenso
 
 Training all three neural networks is substantial work; GPU or Apple Silicon is strongly recommended. The repository does not manufacture placeholder weights or accuracy numbers.
 
+### Optional mixed-script PARSeq model
+
+The combined Latin + Devanagari OCR model is independent of the existing Latin
+and Devanagari checkpoints. Generate its grouped, deterministic synthetic data:
+
+```bash
+.venv/bin/python scripts/generate_mixed_ocr_dataset.py \
+  --output data/mixed_ocr_dataset \
+  --count 100000 \
+  --seed 20260904 \
+  --val-fraction 0.10
+```
+
+Train, resume, extend the total target, or evaluate only this third model:
+
+```bash
+.venv/bin/python scripts/train_ocr.py --data-dir data/mixed_ocr_dataset --epochs 30 --batch 64 --device mps --checkpoint-dir models/ocr_mixed --run-name parseq_ocr_mixed --diagnostic-samples 5 --fresh
+.venv/bin/python scripts/train_ocr.py --data-dir data/mixed_ocr_dataset --epochs 30 --batch 64 --device mps --checkpoint-dir models/ocr_mixed --run-name parseq_ocr_mixed --diagnostic-samples 5 --resume
+.venv/bin/python scripts/train_ocr.py --data-dir data/mixed_ocr_dataset --epochs 60 --batch 64 --device mps --checkpoint-dir models/ocr_mixed --run-name parseq_ocr_mixed --diagnostic-samples 5 --resume
+.venv/bin/python scripts/train_ocr.py --data-dir data/mixed_ocr_dataset --epochs 60 --batch 64 --device mps --checkpoint-dir models/ocr_mixed --run-name parseq_ocr_mixed --diagnostic-samples 20 --evaluate-only
+```
+
+When `models/ocr_mixed/best.pt` exists, inference evaluates it as a third,
+whole-row candidate. Predictions from separate models are never spliced. When
+the checkpoint is absent, verbose inference reports that fact and continues
+with the existing Latin and Devanagari models.
+
 ## Inference
 
 One image, with clean stdout:
 
 ```bash
 python main.py --image test.jpg
+```
+
+Normal production:
+
+```bash
+python main.py \
+  --image "IMAGE_PATH" \
+  --device mps \
+  --det-imgsz 960 \
+  --det-conf 0.25
 ```
 
 Folder mode:
@@ -149,13 +186,50 @@ and stitched images for accepted plate results only:
 python main.py --image test.jpg --save-results
 ```
 
+For a difficult small or distant plate, full-image detection automatically
+retries at the configured fallback resolution when the primary pass returns
+zero detections:
+
+```bash
+python main.py \
+  --image "IMAGE_PATH" \
+  --device mps \
+  --det-imgsz 1920 \
+  --det-conf 0.10 \
+  --det-fallback \
+  --verbose
+```
+
+Overlapping tile fallback is enabled by default when the primary pass is empty;
+use `--no-det-tile-fallback` to disable it. Tile and fallback detections are
+merged through the same NMS. Structured debugging writes to
+`outputs/debug/<image_stem>/`:
+
+```bash
+python main.py \
+  --image "IMAGE_PATH" \
+  --device mps \
+  --det-imgsz 1920 \
+  --det-conf 0.10 \
+  --det-fallback \
+  --save-debug \
+  --verbose
+```
+
 For a 1080p dashcam frame whose plate is only a few dozen pixels wide:
 
 ```bash
 python main.py --image dashcam.jpg --det-imgsz 1920
 ```
 
-`Detected Plates: 0` means the detector returned no box above its threshold. A no-OBB row result uses the returned original crop directly, and other row-path failures retry PARSeq on the preprocessed detector crop. `PLATE_UNREADABLE` means OCR crashed/returned no usable text or both OCR paths were rejected by confidence/registration-format validation (`--ocr-conf` defaults to 0.80).
+The summary separates accepted, review, and rejected candidates. `VALID_FORMAT`
+only means the text shape resembles a registration; it does not establish that
+each OCR character is correct. `ACCEPTED` additionally requires very high OCR
+confidence and no blocking reconciliation or image-risk signal. Medium-confidence,
+conflicting, multi-row, or yellow night/glare candidates become
+`REVIEW_REQUIRED`. Raw OCR is never completed with invented characters.
+Normalized text is stored separately; short visible text is `PARTIAL_VISIBLE`
+and low-confidence visible text is `LOW_CONFIDENCE`.
 
 ## Evaluation
 

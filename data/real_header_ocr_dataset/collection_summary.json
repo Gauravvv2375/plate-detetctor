@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "REJECTED_UNSUITABLE": 128,
+    "UNAVAILABLE": 55,
+    "RETAINED_NEEDS_REVIEW": 9,
+    "DUPLICATE_EXCLUDED": 13,
+    "search_queries": 44,
+    "distinct_recorded_image_urls": 205,
+    "recorded_search_image_appearances": 308,
+    "downloaded_images": 113,
+    "header_crops": 2,
+    "extraction_failures": 7,
+    "devanagari_source_candidates": 9,
+    "verified_labels_added": 0
+  },
+  "safety": {
+    "labels_sha256": "307a65d79c905883cd34d2898ad00347239e63e30f24f4d7c8bacd6ad89b29f5",
+    "training_started": false,
+    "checkpoints_sha256": {
+      "models/plate_detector/best.pt": "abfc74a3e0ff42ec56023048067764af001d4f9a6ccd76663832e237fab38751",
+      "models/row_detector/best.pt": "ee0f665c2d8ace9eaf5e67404b6cfe4a283232bada55d7f734347de2ed614913",
+      "models/ocr/best.pt": "169aa19cf7989f37fc593c325909a35891926edd49b697775090bea665db24a3",
+      "models/ocr_devanagari/best.pt": "d077b3a76e44839ab33bc14acd7a2545f410fa33e275d19281b1e9474c835267",
+      "models/ocr_mixed_v2/best.pt": "e360124715bee5b690cba599b150da7a3f87770382a7861ffd188fb274789b1f"
+    }
+  },
+  "target": 100,
+  "target_met": false,
+  "caveats": [
+    "Counts describe archived candidate URLs, not every image on result pages.",
+    "All retained data is unverified; candidate transcriptions deliberately blank.",
+    "RTO-prefix and adjacent official placard cases are explicitly identified in notes.",
+    "Rejected downloads remain in collection_staging and must not be used for training."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "samples": {
+    "unlabeled/header_aba299f673e74e86a6d71a283f82ab91.png": {
+      "source_sha256": "534862226366b98843d4f1211c0ccb433459e24c6bd293e83e1a40d6ea6684fa",
+      "source": "/Users/gauravghanekar/Downloads/number_data/images_1581599221866_marathi_number_plate.webp",
+      "verified": false,
+      "crop_sha256": "f0026352af5479dc5308830340623b47826d61b5f8813922d9a2bb631fc9195f",
+      "label_source": "unlabeled",
+      "text": null
+    }
+  },
+  "verified_samples": 0,
+  "unlabeled_samples": 1
+}

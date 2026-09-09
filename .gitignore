@@ -1,10 +1,26 @@
 .DS_Store
 .venv/
+.env
+.env.*
+!.env.example
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.tmp
+*.swp
+*.swo
 runs/
+outputs/
 reports/*_runtime.yaml
-models/**/*.pt
 data/**/*.cache
 tests/**/*.cache
 tests/resume_smoke/checkpoints/
+data/real_header_ocr_dataset/.labeling.lock
+# Rejected downloads and diagnostic contact sheets are not training assets.
+data/real_header_ocr_dataset/collection_staging/
+data/real_header_ocr_dataset/extraction_staging/
+data/real_header_ocr_dataset/collection_review_*.jpg
+data/real_header_ocr_dataset/continuation_*/downloads/
+data/real_header_ocr_dataset/continuation_*/sources_*.jpg

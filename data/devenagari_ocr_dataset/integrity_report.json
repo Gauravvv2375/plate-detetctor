@@ -1,0 +1,13 @@
+{
+  "valid": true,
+  "total_images": 50000,
+  "valid_labels": 50000,
+  "missing_images": 0,
+  "orphan_images": 0,
+  "invalid_labels": 0,
+  "duplicate_labels": 0,
+  "corrupt_or_blank_images": 0,
+  "rendered_text_matches_stored_label": true,
+  "charset_size": 68,
+  "errors": []
+}

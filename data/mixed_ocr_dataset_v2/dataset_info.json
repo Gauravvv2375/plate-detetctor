@@ -1,0 +1,46 @@
+{
+  "generator": "scripts/generate_mixed_ocr_dataset.py",
+  "generator_version": 2,
+  "seed": 20260904,
+  "total_samples": 80000,
+  "training_samples": 71982,
+  "validation_samples": 8018,
+  "unique_registration_strings": 80000,
+  "unique_groups": 79994,
+  "charset_size": 73,
+  "charset": " -0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZआईएओकचजटडनपफबमयरलवस़ाीूे्०१२३४५६७८९",
+  "minimum_label_length": 4,
+  "maximum_label_length": 32,
+  "layout_counts": {
+    "one_line": 53184,
+    "two_line": 19004,
+    "header_registration": 7812
+  },
+  "category_counts": {
+    "latin_only": 15999,
+    "devanagari_only": 16000,
+    "latin_letters_devanagari_digits": 16001,
+    "devanagari_letters_ascii_digits": 15999,
+    "mixed_script": 16001
+  },
+  "difficulty_counts": {
+    "medium": 35910,
+    "difficult": 19992,
+    "clean": 24098
+  },
+  "background_counts": {
+    "yellow": 16183,
+    "white": 63817
+  },
+  "fonts": [
+    "Arial Unicode",
+    "Devanagari Sangam MN 0",
+    "Devanagari Sangam MN 1"
+  ],
+  "font_policy": "complete Latin + Devanagari cmap coverage required; no Pillow fallback",
+  "validation_fraction_requested": 0.1,
+  "split_strategy": "sha256(group_id); all related variants remain in one split",
+  "unicode_normalization": "NFC",
+  "two_line_training_preprocess": "horizontal_stitch_v1",
+  "decorative_header_training_preprocess": "registration_row_crop_v1"
+}
