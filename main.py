@@ -340,6 +340,17 @@ def _detect_tiles(
     return detections
 
 
+def _needs_dense_tile_recovery(
+    detections: list[SourcedDetection], image: Image.Image
+) -> bool:
+    """Use enhanced detection only for scenes containing many small plates."""
+    if len(detections) < 4 or image.width <= 0 or image.height <= 0:
+        return False
+    image_area = image.width * image.height
+    relative_areas = [_box_size(item.box)[2] / image_area for item in detections]
+    return float(np.median(relative_areas)) <= 0.03
+
+
 def _detect_for_inference(
     detector: PlateDetector,
     image: Image.Image,
@@ -355,6 +366,7 @@ def _detect_for_inference(
     primary = _sourced(detector.detect(image), "primary")
     diagnostics.primary_count = len(primary)
     candidates = primary
+    dense_tile_recovery = tile_enabled and _needs_dense_tile_recovery(primary, image)
     if not primary and fallback_enabled:
         diagnostics.fallback_attempted = True
         fallback = _sourced(
@@ -363,7 +375,7 @@ def _detect_for_inference(
         )
         diagnostics.fallback_count = len(fallback)
         candidates = fallback
-    if not primary and tile_enabled:
+    if tile_enabled and (not primary or dense_tile_recovery):
         diagnostics.tile_attempted = True
         tiles = _detect_tiles(
             detector,

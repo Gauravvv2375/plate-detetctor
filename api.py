@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 import tempfile
 from pathlib import Path
@@ -9,6 +10,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from PIL import UnidentifiedImageError
 
 from main import infer_all
 from src.detector import PlateDetector
@@ -18,6 +20,7 @@ from src.row_detector import RowDetector
 from src.utils import PROJECT_ROOT, choose_device
 
 
+logger = logging.getLogger(__name__)
 load_dotenv(PROJECT_ROOT / ".env")
 
 cors_origins = [
@@ -105,5 +108,8 @@ async def predict(file: UploadFile = File(...)) -> dict[str, object]:
                 header_recognizer=header_recognizer,
             )
         return {"results": [result.as_dict() for result in results]}
+    except UnidentifiedImageError as error:
+        raise HTTPException(status_code=400, detail="Uploaded file is not a decodable image") from error
     except Exception as error:
+        logger.exception("ANPR prediction failed")
         raise HTTPException(status_code=500, detail=str(error)) from error

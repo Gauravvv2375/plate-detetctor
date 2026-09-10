@@ -670,6 +670,62 @@ class MultiPlateInferenceTests(unittest.TestCase):
         self.assertEqual(results[0].detection_source, "tile")
         self.assertEqual(diagnostics.tile_count, 1)
 
+    def test_dense_small_primary_detections_trigger_tile_recovery(self):
+        primary = [
+            detection((10, 10, 50, 30), (255, 0, 0)),
+            detection((60, 10, 100, 30), (0, 255, 0)),
+            detection((110, 10, 150, 30), (0, 0, 255)),
+            detection((160, 10, 200, 30), (255, 255, 0)),
+        ]
+        recovered = detection((10, 70, 50, 90), (255, 0, 255))
+
+        class DenseDetector:
+            crop_margin = 0.08
+
+            def __init__(self):
+                self.calls = []
+
+            def detect(self, image, **kwargs):
+                self.calls.append(kwargs)
+                return [recovered] if kwargs else primary
+
+        detector = DenseDetector()
+        diagnostics = DetectionDiagnostics()
+        results = infer_all(
+            self.image,
+            detector,
+            FakeRowDetector(),
+            FakeRecognizer(["MH12AB1234"] * 5),
+            0.35,
+            detection_diagnostics=diagnostics,
+            detector_tile_fallback=True,
+            detector_tile_size=256,
+        )
+
+        self.assertEqual(len(detector.calls), 2)
+        self.assertEqual(len(results), 5)
+        self.assertEqual(diagnostics.primary_count, 4)
+        self.assertEqual(diagnostics.tile_count, 1)
+        self.assertEqual(diagnostics.final_count, 5)
+
+    def test_single_plate_keeps_fast_path_when_tile_recovery_is_enabled(self):
+        detector = FakeDetector([detection((10, 10, 50, 30), (255, 255, 0))])
+        diagnostics = DetectionDiagnostics()
+
+        results = infer_all(
+            self.image,
+            detector,
+            FakeRowDetector(),
+            FakeRecognizer(["MH12AB1234"]),
+            0.35,
+            detection_diagnostics=diagnostics,
+            detector_tile_fallback=True,
+        )
+
+        self.assertEqual(len(results), 1)
+        self.assertFalse(diagnostics.tile_attempted)
+        self.assertEqual(diagnostics.tile_count, 0)
+
     def test_save_debug_writes_structured_per_image_bundle(self):
         diagnostics = DetectionDiagnostics()
         debug_root = self.root / "outputs"
