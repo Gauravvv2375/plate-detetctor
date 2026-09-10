@@ -12,6 +12,12 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import UnidentifiedImageError
 
+# Railway's build image intentionally excludes checkpoints. Materialize and
+# verify them before importing modules that initialize production models.
+from scripts.materialize_production_models import materialize_required_models
+
+materialize_required_models()
+
 from main import infer_all
 from src.detector import PlateDetector
 from src.header_ocr import load_header_recognizer

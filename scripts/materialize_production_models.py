@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Materialize and verify production Git LFS checkpoints during deployment."""
+"""Materialize and verify production Git LFS checkpoints during startup."""
 
 from __future__ import annotations
 
@@ -97,11 +97,11 @@ def _download_model(
 def materialize_required_models() -> None:
     for relative_path, (expected_hash, expected_size) in REQUIRED_MODELS.items():
         path = PROJECT_ROOT / relative_path
-        if not path.is_file():
-            raise RuntimeError(f"Required production model is missing: {relative_path}")
-        if _is_lfs_pointer(path):
+        if not path.is_file() or _is_lfs_pointer(path):
             print(f"Materializing Git LFS checkpoint: {relative_path}", flush=True)
             _download_model(relative_path, path, expected_hash, expected_size)
+        if not path.is_file():
+            raise RuntimeError(f"Required production model is missing: {relative_path}")
         if _is_lfs_pointer(path):
             raise RuntimeError(
                 f"Required model is still a Git LFS pointer; binary checkpoint was not "

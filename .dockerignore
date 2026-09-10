@@ -1,0 +1,36 @@
+.git
+.venv
+.env
+.env.*
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+*.tmp
+*.swp
+*.swo
+.DS_Store
+
+# Training, evaluation, and local artifacts are not needed by the API image.
+data
+models
+runs
+outputs
+reports
+tests
+PROJECT_DOCUMENTATION.md
+README.md
+
+# Only the production materializer is required at runtime.
+scripts/*
+!scripts/materialize_production_models.py
+
+# Local test/source media must not enter the deployment context.
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.avif
+*.mp4
+*.mov
+*.avi
