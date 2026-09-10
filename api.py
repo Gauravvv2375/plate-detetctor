@@ -39,15 +39,45 @@ app.add_middleware(
 )
 
 
-def _load_models() -> tuple[PlateDetector, RowDetector, PARSeqRecognizer, object | None]:
+def _load_models() -> tuple[
+    PlateDetector,
+    RowDetector,
+    PARSeqRecognizer,
+    PARSeqRecognizer | None,
+    PARSeqRecognizer | None,
+    object | None,
+]:
     detector = PlateDetector(PROJECT_ROOT / "models/plate_detector/best.pt", device, 0.30, 640)
     row_detector = RowDetector(PROJECT_ROOT / "models/row_detector/best.pt", device)
     recognizer = PARSeqRecognizer(PROJECT_ROOT / "models/ocr/best.pt", device)
+    devanagari_path = PROJECT_ROOT / "models/ocr_devanagari/best.pt"
+    devanagari_recognizer = (
+        PARSeqRecognizer(devanagari_path, device)
+        if devanagari_path.is_file()
+        and devanagari_path.resolve() != Path(recognizer.checkpoint_path)
+        else None
+    )
+    mixed_path = PROJECT_ROOT / "models/ocr_mixed_v2/best.pt"
+    mixed_recognizer = PARSeqRecognizer(mixed_path, device) if mixed_path.is_file() else None
     header_recognizer = load_header_recognizer(PROJECT_ROOT / "models/ocr_header_real_v1/best.pt", device)
-    return detector, row_detector, recognizer, header_recognizer
+    return (
+        detector,
+        row_detector,
+        recognizer,
+        devanagari_recognizer,
+        mixed_recognizer,
+        header_recognizer,
+    )
 
 
-detector, row_detector, recognizer, header_recognizer = _load_models()
+(
+    detector,
+    row_detector,
+    recognizer,
+    devanagari_recognizer,
+    mixed_recognizer,
+    header_recognizer,
+) = _load_models()
 
 
 @app.get("/health")
@@ -68,6 +98,10 @@ async def predict(file: UploadFile = File(...)) -> dict[str, object]:
                 row_detector,
                 recognizer,
                 0.80,
+                detector_fallback=True,
+                detector_tile_fallback=True,
+                devanagari_recognizer=devanagari_recognizer,
+                mixed_recognizer=mixed_recognizer,
                 header_recognizer=header_recognizer,
             )
         return {"results": [result.as_dict() for result in results]}

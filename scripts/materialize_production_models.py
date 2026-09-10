@@ -26,6 +26,14 @@ REQUIRED_MODELS = {
         "169aa19cf7989f37fc593c325909a35891926edd49b697775090bea665db24a3",
         285_530_469,
     ),
+    "models/ocr_devanagari/best.pt": (
+        "d077b3a76e44839ab33bc14acd7a2545f410fa33e275d19281b1e9474c835267",
+        285_965_093,
+    ),
+    "models/ocr_mixed_v2/best.pt": (
+        "e360124715bee5b690cba599b150da7a3f87770382a7861ffd188fb274789b1f",
+        285_881_829,
+    ),
 }
 
 
