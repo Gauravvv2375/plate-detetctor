@@ -5,7 +5,13 @@
       "commands": [
         "...",
         "python -m pip uninstall -y opencv-python opencv-contrib-python opencv-contrib-python-headless",
-        "python -m pip install --no-cache-dir --force-reinstall --no-deps opencv-python-headless==4.11.0.86",
+        "python -m pip install --no-cache-dir --force-reinstall --no-deps opencv-python-headless==4.11.0.86"
+      ]
+    },
+    "build": {
+      "commands": [
+        "...",
+        "test -f scripts/materialize_production_models.py",
         "python scripts/materialize_production_models.py"
       ]
     }
