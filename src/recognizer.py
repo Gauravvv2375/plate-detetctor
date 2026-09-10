@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gc
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -28,7 +29,12 @@ class PARSeqRecognizer:
         from doctr.models import parseq
 
         self.torch, self.device = torch, device
-        checkpoint = torch.load(weights, map_location="cpu", weights_only=False)
+        # Production checkpoints also contain optimizer/scheduler state. Memory
+        # mapping prevents those unused training tensors from being copied into
+        # RSS while the inference model is initialized.
+        checkpoint = torch.load(
+            weights, map_location="cpu", weights_only=False, mmap=True
+        )
         self.checkpoint_path = str(weights.resolve())
         self.checkpoint_epoch = checkpoint.get("epoch")
         vocabulary = checkpoint.get("vocab", PLATE_CHARSET)
@@ -40,7 +46,9 @@ class PARSeqRecognizer:
             pretrained=False, pretrained_backbone=False, vocab=vocabulary, max_length=max_length
         )
         state_dict = checkpoint.get("model_state_dict", checkpoint.get("model", checkpoint))
-        self.model.load_state_dict(state_dict)
+        self.model.load_state_dict(state_dict, assign=True)
+        del state_dict, checkpoint
+        gc.collect()
         self.model.to(device).eval()
 
     @staticmethod

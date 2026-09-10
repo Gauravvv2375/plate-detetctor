@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import os
+import resource
 import tempfile
 from pathlib import Path
 
@@ -12,11 +13,38 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import UnidentifiedImageError
 
+
+def _startup_memory() -> tuple[float, float]:
+    """Return current and peak RSS in MiB without adding a runtime dependency."""
+    status_path = Path("/proc/self/status")
+    if status_path.is_file():
+        values: dict[str, float] = {}
+        for line in status_path.read_text(encoding="utf-8").splitlines():
+            key, separator, value = line.partition(":")
+            if separator and key in {"VmRSS", "VmHWM"}:
+                values[key] = float(value.split()[0]) / 1024
+        return values.get("VmRSS", 0.0), values.get("VmHWM", 0.0)
+    peak = float(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+    # macOS reports bytes; Linux reports KiB (handled above through /proc).
+    peak_mib = peak / (1024 * 1024)
+    return peak_mib, peak_mib
+
+
+def _startup_step(message: str) -> None:
+    current, peak = _startup_memory()
+    print(
+        f"ANPR STARTUP: {message}; RSS={current:.1f} MiB; PEAK_RSS={peak:.1f} MiB",
+        flush=True,
+    )
+
+
 # Railway's build image intentionally excludes checkpoints. Materialize and
 # verify them before importing modules that initialize production models.
 from scripts.materialize_production_models import materialize_required_models
 
+_startup_step("process initialized")
 materialize_required_models()
+_startup_step("production checkpoints verified")
 
 from main import infer_all
 from src.detector import PlateDetector
@@ -57,8 +85,11 @@ def _load_models() -> tuple[
     object | None,
 ]:
     detector = PlateDetector(PROJECT_ROOT / "models/plate_detector/best.pt", device, 0.30, 640)
+    _startup_step("plate detector loaded")
     row_detector = RowDetector(PROJECT_ROOT / "models/row_detector/best.pt", device)
+    _startup_step("row detector loaded")
     recognizer = PARSeqRecognizer(PROJECT_ROOT / "models/ocr/best.pt", device)
+    _startup_step("Latin OCR loaded")
     devanagari_path = PROJECT_ROOT / "models/ocr_devanagari/best.pt"
     devanagari_recognizer = (
         PARSeqRecognizer(devanagari_path, device)
@@ -66,8 +97,10 @@ def _load_models() -> tuple[
         and devanagari_path.resolve() != Path(recognizer.checkpoint_path)
         else None
     )
+    _startup_step("Devanagari OCR loaded")
     mixed_path = PROJECT_ROOT / "models/ocr_mixed_v2/best.pt"
     mixed_recognizer = PARSeqRecognizer(mixed_path, device) if mixed_path.is_file() else None
+    _startup_step("Mixed OCR v2 loaded")
     header_recognizer = load_header_recognizer(PROJECT_ROOT / "models/ocr_header_real_v1/best.pt", device)
     return (
         detector,
@@ -87,6 +120,7 @@ def _load_models() -> tuple[
     mixed_recognizer,
     header_recognizer,
 ) = _load_models()
+_startup_step("FastAPI application ready")
 
 
 @app.get("/health")
