@@ -167,6 +167,7 @@ class OCRRouting:
     mixed_prediction: str = ""
     visual_groups: int = 0
     row_predictions: list[dict] = field(default_factory=list)
+    agreement_count: int = 1
 
 
 class _DebugRecognizer:
@@ -348,7 +349,9 @@ def _needs_dense_tile_recovery(
         return False
     image_area = image.width * image.height
     relative_areas = [_box_size(item.box)[2] / image_area for item in detections]
-    return float(np.median(relative_areas)) <= 0.03
+    # Six or more primary detections are already a dense scene. For four or
+    # five, reserve the extra pass for plates that are small in the full frame.
+    return len(detections) >= 6 or float(np.median(relative_areas)) <= 0.03
 
 
 def _detect_for_inference(
@@ -416,15 +419,34 @@ def _row_rejection(row_result, _confidence_threshold: float) -> str | None:
     return None
 
 
+def _compact_registration(text: str) -> str:
+    return re.sub(r"[ -]+", "", unicodedata.normalize("NFC", text).strip())
+
+
+def _indian_registration_format(text: str) -> str | None:
+    """Classify known structures without changing any predicted character."""
+    compact = _compact_registration(text)
+    patterns = (
+        ("STANDARD", r"[A-Z]{2}[0-9]{1,2}[A-Z]{1,3}[0-9]{4}"),
+        ("STATE_NUMBER", r"[A-Z]{2}[0-9]{4,6}"),
+        ("SUFFIX_TEMPORARY", r"[A-Z]{2}[0-9]{1,2}[A-Z]{1,3}[0-9]{2,4}[A-Z]{1,2}"),
+        ("BH_SERIES", r"[0-9]{2}BH[0-9]{4}[A-Z]{1,2}"),
+        # Rule 53C: T + issuance month/year + state + serial + suffix.
+        ("TEMPORARY", r"T[0-9]{4}[A-Z]{2}[0-9]{4}[A-Z]{1,2}"),
+        # Legacy dealer/trade form represented by state code + R + office/serial.
+        ("DEALER", r"[A-Z]{2}R[0-9]{6}"),
+        # Current trade marks append TC and a four-digit allocation to a base mark.
+        ("TRADE_CERTIFICATE", r"[A-Z]{2}[0-9]{1,2}[A-Z][0-9]{4}TC[0-9]{4}"),
+        ("DIPLOMATIC", r"[0-9]{2,3}(?:CD|CC|UN)[0-9]{1,4}"),
+    )
+    return next((name for name, pattern in patterns if re.fullmatch(pattern, compact)), None)
+
+
 def _is_valid_indian_registration(text: str) -> bool:
-    """Accept common Latin formats and plausible mixed-script registrations."""
-    compact = re.sub(r"[ -]+", "", unicodedata.normalize("NFC", text).strip())
-    standard = r"[A-Z]{2}\d{1,2}[A-Z]{1,4}\d{2,4}"
-    state_number = r"[A-Z]{2}\d{4,6}"
-    temporary = r"[A-Z]{2}\d{1,2}[A-Z]{1,3}\d{2,4}[A-Z]{1,2}"
-    bharat_series = r"\d{2}BH\d{4}[A-Z]{1,2}"
-    if re.fullmatch(rf"(?:{standard}|{state_number}|{temporary}|{bharat_series})", compact):
+    """Accept known Latin formats and plausible mixed-script registrations."""
+    if _indian_registration_format(text) is not None:
         return True
+    compact = _compact_registration(text)
     if not _has_only_supported_registration_characters(text):
         return False
     units = _registration_units(compact)
@@ -463,9 +485,9 @@ def _postprocess_ocr_text(text: str) -> str:
 def _evaluate_ocr(ocr_result, confidence_threshold: float) -> OCREvaluation:
     visible = unicodedata.normalize("NFC", ocr_result.text).strip()
     normalized = _postprocess_ocr_text(visible)
-    compact = re.sub(r"[ -]+", "", normalized)
-    exact_standard = re.fullmatch(r"[A-Z]{2}\d{1,2}[A-Z]{1,3}\d{4}", compact) is not None
-    exact_bharat = re.fullmatch(r"\d{2}BH\d{4}[A-Z]{1,2}", compact) is not None
+    compact = _compact_registration(normalized)
+    registration_format = _indian_registration_format(normalized)
+    known_format = registration_format is not None
     units = _registration_units(compact)
     supported = _has_only_supported_registration_characters(normalized)
     has_letter = any(character.isalpha() for character in units)
@@ -476,12 +498,12 @@ def _evaluate_ocr(ocr_result, confidence_threshold: float) -> OCREvaluation:
         validation_status, final_status = "INVALID_FORMAT", "INVALID_FORMAT"
         reason = "OCR returned empty text"
     elif ocr_result.confidence < confidence_threshold:
-        validation_status = "VALID_FORMAT" if exact_standard or exact_bharat else "POTENTIAL_FORMAT" if plausible_visible else "INVALID_FORMAT"
-        final_status = "LOW_CONFIDENCE" if plausible_visible or exact_standard or exact_bharat else "INVALID_FORMAT"
+        validation_status = "VALID_FORMAT" if known_format else "POTENTIAL_FORMAT" if plausible_visible and mixed_script else "INVALID_FORMAT"
+        final_status = "LOW_CONFIDENCE" if plausible_visible or known_format else "INVALID_FORMAT"
         reason = f"OCR confidence {ocr_result.confidence:.4f} is below {confidence_threshold:.4f}"
-    elif exact_standard or exact_bharat:
+    elif known_format:
         validation_status, final_status = "VALID_FORMAT", "FORMAT_CONFIDENT"
-        reason = "format and confidence checks passed; character correctness is not guaranteed"
+        reason = f"{registration_format.lower()} format and confidence checks passed; character correctness is not guaranteed"
     elif plausible_visible:
         validation_status = "POTENTIAL_FORMAT" if mixed_script else "INVALID_FORMAT"
         final_status = "UNCERTAIN" if mixed_script else "PARTIAL_VISIBLE" if _is_valid_indian_registration(normalized) else "UNCERTAIN"
@@ -535,9 +557,48 @@ def _routing_score(evaluation: OCREvaluation, visual_groups: int) -> float:
     if not evaluation.usable:
         return -10.0
     score = evaluation.confidence
+    score += {
+        "VALID_FORMAT": 0.20,
+        "POTENTIAL_FORMAT": 0.05,
+        "INVALID_FORMAT": -0.20,
+    }.get(evaluation.validation_status, 0.0)
     if visual_groups:
-        score -= 0.07 * abs(len(_registration_units(evaluation.normalized_text)) - visual_groups)
+        length_gap = abs(len(_registration_units(evaluation.normalized_text)) - visual_groups)
+        score -= min(0.16, 0.04 * length_gap)
     return score
+
+
+def _candidate_key(evaluation: OCREvaluation) -> str:
+    """Compare OCR candidates while preserving their original output formatting."""
+    return _compact_registration(evaluation.normalized_text)
+
+
+def _candidate_scores(
+    evaluations: list[tuple[str, OCREvaluation]], visual_groups: int
+) -> dict[str, float]:
+    scores = {name: _routing_score(evaluation, visual_groups) for name, evaluation in evaluations}
+    for name, evaluation in evaluations:
+        if not evaluation.usable:
+            continue
+        key = _candidate_key(evaluation)
+        agreements = sum(
+            other.usable and _candidate_key(other) == key
+            for other_name, other in evaluations
+            if other_name != name
+        )
+        scores[name] += 0.08 * agreements
+        if name == "mixed" and _contains_devanagari(evaluation.normalized_text) and any(
+            "A" <= item <= "Z" or "0" <= item <= "9" for item in evaluation.normalized_text
+        ):
+            scores[name] += 0.16
+    return scores
+
+
+def _candidate_agreement_count(
+    chosen: OCREvaluation, evaluations: list[tuple[str, OCREvaluation]]
+) -> int:
+    key = _candidate_key(chosen)
+    return sum(evaluation.usable and _candidate_key(evaluation) == key for _, evaluation in evaluations)
 
 
 def _evaluate_header(prediction, threshold):
@@ -574,50 +635,46 @@ def _route_ocr(
         if mixed_recognizer is None:
             return OCRRouting(latin, "single OCR model", latin.normalized_text, "", "", visual_groups)
         mixed = recognize(mixed_recognizer)
-        mixed_score = _routing_score(mixed, visual_groups)
-        latin_score = _routing_score(latin, visual_groups)
-        chosen = mixed if mixed.usable and mixed_score >= latin_score - 0.03 else latin
-        selected = "mixed" if chosen is mixed else "Latin"
+        evaluations = [("Latin", latin), ("mixed", mixed)]
+        scores = _candidate_scores(evaluations, visual_groups)
+        usable = [(name, evaluation) for name, evaluation in evaluations if evaluation.usable]
+        selected, chosen = max(usable, key=lambda item: (scores[item[0]], item[0] == "mixed")) if usable else ("Latin", latin)
         return OCRRouting(
             chosen,
-            f"mixed + Latin OCR; selected {selected} (Latin score={latin_score:.3f}, mixed score={mixed_score:.3f})",
+            f"mixed + Latin OCR; selected {selected} by structure, agreement, confidence, and visual length "
+            f"(Latin score={scores['Latin']:.3f}, mixed score={scores['mixed']:.3f})",
             latin.normalized_text,
             "",
             mixed.normalized_text,
             visual_groups,
+            agreement_count=_candidate_agreement_count(chosen, evaluations),
         )
 
     devanagari = recognize(devanagari_recognizer)
-    latin_score = _routing_score(latin, visual_groups)
-    devanagari_score = _routing_score(devanagari, visual_groups)
-    latin_length_gap = abs(len(_registration_units(latin.normalized_text)) - visual_groups) if visual_groups else 0
-    devanagari_margin = 0.10 if latin.validation_status == "VALID_FORMAT" and latin_length_gap <= 2 else 0.03
-    if not latin.usable and devanagari.usable:
-        chosen, selected = devanagari, "Devanagari"
-    elif devanagari.usable and devanagari_score > latin_score + devanagari_margin:
-        chosen, selected = devanagari, "Devanagari"
-    else:
-        chosen, selected = latin, "Latin"
-
+    evaluations = [("Latin", latin), ("Devanagari", devanagari)]
+    mixed = None
     if mixed_recognizer is not None:
         mixed = recognize(mixed_recognizer)
-        mixed_score = _routing_score(mixed, visual_groups)
-        visible_mixed = _contains_devanagari(mixed.normalized_text) and any("A" <= item <= "Z" or "0" <= item <= "9" for item in mixed.normalized_text)
-        if visible_mixed:
-            mixed_score += 0.08
-        selected_score = devanagari_score if selected == "Devanagari" else latin_score
-        if mixed.usable and mixed_score >= selected_score - 0.03:
-            chosen, selected, selected_score = mixed, "mixed", mixed_score
+        evaluations.append(("mixed", mixed))
+    scores = _candidate_scores(evaluations, visual_groups)
+    usable = [(name, evaluation) for name, evaluation in evaluations if evaluation.usable]
+    priority = {"Devanagari": 0, "Latin": 1, "mixed": 2}
+    selected, chosen = max(
+        usable, key=lambda item: (scores[item[0]], priority[item[0]])
+    ) if usable else ("Latin", latin)
+
+    if mixed is not None:
+        selected_score = scores[selected]
         strategy = (
-            f"three-model OCR; selected {selected} by confidence, script compatibility, and visual-length agreement "
-            f"(visual groups={visual_groups}, Latin score={latin_score:.3f}, "
-            f"Devanagari score={devanagari_score:.3f}, mixed score={mixed_score:.3f})"
+            f"three-model OCR; selected {selected} by structure, model agreement, confidence, script compatibility, and visual length "
+            f"(visual groups={visual_groups}, Latin score={scores['Latin']:.3f}, "
+            f"Devanagari score={scores['Devanagari']:.3f}, mixed score={scores['mixed']:.3f})"
         )
         alternatives = [
-            score for evaluation, score in ((latin, latin_score), (devanagari, devanagari_score), (mixed, mixed_score))
-            if evaluation.usable and evaluation.normalized_text != chosen.normalized_text
+            scores[name] for name, evaluation in evaluations
+            if evaluation.usable and _candidate_key(evaluation) != _candidate_key(chosen)
         ]
-        if alternatives and selected_score - max(alternatives) <= 0.03:
+        if alternatives and selected_score - max(alternatives) <= 0.05:
             chosen = replace(
                 chosen,
                 final_status="UNCERTAIN",
@@ -630,10 +687,11 @@ def _route_ocr(
             devanagari.normalized_text,
             mixed.normalized_text,
             visual_groups,
+            agreement_count=_candidate_agreement_count(chosen, evaluations),
         )
 
-    disagreement = latin.usable and devanagari.usable and latin.normalized_text != devanagari.normalized_text
-    if disagreement and abs(latin_score - devanagari_score) <= 0.03:
+    disagreement = latin.usable and devanagari.usable and _candidate_key(latin) != _candidate_key(devanagari)
+    if disagreement and abs(scores["Latin"] - scores["Devanagari"]) <= 0.05:
         chosen = replace(
             chosen,
             validation_status="POTENTIAL_FORMAT" if _contains_devanagari(chosen.normalized_text) else chosen.validation_status,
@@ -641,10 +699,18 @@ def _route_ocr(
             reason="Latin and Devanagari OCR disagree with similar routing scores; manual review is required",
         )
     strategy = (
-        f"dual OCR; selected {selected} by confidence and visual-length agreement "
-        f"(visual groups={visual_groups}, Latin score={latin_score:.3f}, Devanagari score={devanagari_score:.3f})"
+        f"dual OCR; selected {selected} by structure, model agreement, confidence, and visual length "
+        f"(visual groups={visual_groups}, Latin score={scores['Latin']:.3f}, Devanagari score={scores['Devanagari']:.3f})"
     )
-    return OCRRouting(chosen, strategy, latin.normalized_text, devanagari.normalized_text, "", visual_groups)
+    return OCRRouting(
+        chosen,
+        strategy,
+        latin.normalized_text,
+        devanagari.normalized_text,
+        "",
+        visual_groups,
+        agreement_count=_candidate_agreement_count(chosen, evaluations),
+    )
 
 
 def _apply_routing_diagnostics(result: PlateInference, routing: OCRRouting) -> None:
@@ -683,6 +749,7 @@ def _route_row_result(
         visual_groups=sum(route.visual_groups for route in routes),
         row_predictions=[{'text': route.evaluation.normalized_text, 'confidence': route.evaluation.confidence,
                           'strategy': route.strategy} for route in routes],
+        agreement_count=min(route.agreement_count for route in routes),
     )
 
 
@@ -769,7 +836,7 @@ def _reconcile_ocr(primary: OCREvaluation | None, direct: OCREvaluation, header_
         return direct
     if not direct.usable:
         return primary
-    if primary.normalized_text == direct.normalized_text:
+    if _candidate_key(primary) == _candidate_key(direct):
         return primary if primary.confidence >= direct.confidence else direct
     if header_filtered:
         return replace(primary, final_status='UNCERTAIN',
@@ -1129,11 +1196,20 @@ def infer_all(
                 _apply_ocr_evaluation(result, primary_evaluation)
                 _apply_routing_diagnostics(result, primary_routing)
                 row_failure = primary_evaluation.final_status
+            # A calibrated single-model deployment keeps its historical fast
+            # path. Multi-model production inference skips direct-crop OCR only
+            # when an independent OCR model agrees on the same characters.
+            independently_verified = bool(
+                primary_routing is not None
+                and primary_routing.agreement_count >= 2
+            )
+            single_model_mode = devanagari_recognizer is None and mixed_recognizer is None
             if (
                 not used_no_obb_crop
                 and primary_evaluation is not None
                 and primary_evaluation.final_status == "FORMAT_CONFIDENT"
                 and primary_evaluation.confidence >= 0.99
+                and (single_model_mode or independently_verified)
             ):
                 if output_dir is not None:
                     _save_detection(image, plate, output_dir / "detections" / name, result.artifact_warnings)
@@ -1179,7 +1255,7 @@ def infer_all(
                 primary_evaluation is not None
                 and primary_evaluation.usable
                 and fallback_evaluation.usable
-                and primary_evaluation.normalized_text != fallback_evaluation.normalized_text
+                and _candidate_key(primary_evaluation) != _candidate_key(fallback_evaluation)
             )
             selected_evaluation = _reconcile_ocr(primary_evaluation, fallback_evaluation,
                 header_filtered=any(row.get('reason') == 'small header/decorative text' for row in result.ignored_rows))

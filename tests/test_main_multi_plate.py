@@ -708,6 +708,40 @@ class MultiPlateInferenceTests(unittest.TestCase):
         self.assertEqual(diagnostics.tile_count, 1)
         self.assertEqual(diagnostics.final_count, 5)
 
+    def test_six_moderate_primary_detections_trigger_dense_recovery(self):
+        primary = [
+            detection((10 + 35 * index, 10, 70 + 35 * index, 40), (40 * index, 80, 160))
+            for index in range(6)
+        ]
+        recovered = detection((20, 90, 80, 120), (255, 255, 0))
+
+        class DenseDetector:
+            crop_margin = 0.08
+
+            def __init__(self):
+                self.calls = []
+
+            def detect(self, image, **kwargs):
+                self.calls.append(kwargs)
+                return [recovered] if kwargs else primary
+
+        diagnostics = DetectionDiagnostics()
+        results = infer_all(
+            self.image,
+            DenseDetector(),
+            FakeRowDetector(),
+            FakeRecognizer(["KA01AB1234"] * 7),
+            0.35,
+            detection_diagnostics=diagnostics,
+            detector_tile_fallback=True,
+            detector_tile_size=256,
+        )
+
+        self.assertEqual(len(results), 7)
+        self.assertEqual(diagnostics.primary_count, 6)
+        self.assertEqual(diagnostics.tile_count, 1)
+        self.assertEqual(diagnostics.final_count, 7)
+
     def test_single_plate_keeps_fast_path_when_tile_recovery_is_enabled(self):
         detector = FakeDetector([detection((10, 10, 50, 30), (255, 255, 0))])
         diagnostics = DetectionDiagnostics()
