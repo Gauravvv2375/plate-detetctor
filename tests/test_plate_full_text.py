@@ -98,6 +98,17 @@ class FullTextTests(unittest.TestCase):
         classified = _classify_rows(selected,ignored,candidates)
         self.assertEqual({row['role'] for row in classified}, {'PRIMARY_REGISTRATION','SECONDARY_REGISTRATION'})
 
+    def test_partially_overlapping_duplicate_row_contributes_only_once(self):
+        image = Image.new('RGB', (200,100))
+        stronger = _RowCandidate(0,image,60,55,100,30,1,.95,(10,40,110,70))
+        duplicate = _RowCandidate(1,image,110,55,100,28,2,.85,(60,41,160,69))
+
+        selected, ignored = _select_registration_rows([duplicate, stronger], image.size)
+
+        self.assertEqual([row.index for row in selected], [0])
+        self.assertEqual(len(ignored), 1)
+        self.assertIn('duplicate of row 0', ignored[0]['reason'])
+
     def test_reading_order_groups_same_line_left_to_right(self):
         rows = [{'center':c,'size':[30,20],'text':t} for c,t in [([80,10],'B'),([20,12],'A'),([10,60],'C')]]
         self.assertEqual([row['text'] for row in _reading_order_text(rows)], ['A','B','C'])

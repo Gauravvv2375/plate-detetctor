@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 from main import (
     PlateInference,
@@ -32,6 +32,13 @@ class OCRDecisionTests(unittest.TestCase):
 
     def evaluate(self, text: str, confidence: float = 0.99):
         return _evaluate_ocr(OCRResult(text, text, confidence), 0.80)
+
+    def five_character_row(self):
+        image = Image.new("RGB", (120, 30), "white")
+        draw = ImageDraw.Draw(image)
+        for left in (8, 30, 52, 74, 96):
+            draw.rectangle((left, 3, left + 8, 26), fill="black")
+        return image
 
     def test_known_indian_registration_structures(self):
         examples = {
@@ -67,6 +74,64 @@ class OCRDecisionTests(unittest.TestCase):
 
         self.assertEqual(routing.evaluation.normalized_text, "RJ20P A1908")
         self.assertEqual(len(routing.row_predictions), 2)
+
+    def test_row_fragments_do_not_reward_hallucinated_full_plate_shapes(self):
+        row = self.five_character_row()
+        row_result = RowResult(row, 2, [0.0, 0.0], 0.95, row_images=[row, row])
+        routing = _route_row_result(
+            row_result,
+            row,
+            FixedRecognizer([("RJ20PPJ2020", 0.90), ("AA19A1908", 0.92)]),
+            FixedRecognizer([("", 0.99), ("", 0.99)]),
+            0.80,
+            FixedRecognizer([("RJ20P", 0.80), ("A1908", 0.80)]),
+        )
+
+        self.assertEqual(routing.evaluation.normalized_text, "RJ20P A1908")
+        self.assertEqual([item["text"] for item in routing.row_predictions], ["RJ20P", "A1908"])
+        self.assertNotIn("RJ20PPJ2020", routing.evaluation.normalized_text)
+
+    def test_models_for_one_row_remain_alternative_candidates(self):
+        routing = _route_ocr(
+            self.five_character_row(),
+            FixedRecognizer([("KA01AB1234", 0.95)]),
+            FixedRecognizer([("कए०१अब१२३४", 0.96)]),
+            0.80,
+            FixedRecognizer([("KA01AC1234", 0.94)]),
+        )
+
+        alternatives = {"KA01AB1234", "कए०१अब१२३४", "KA01AC1234"}
+        self.assertIn(routing.evaluation.normalized_text, alternatives)
+        self.assertFalse(any(
+            left + right == routing.evaluation.normalized_text
+            for left in alternatives for right in alternatives if left != right
+        ))
+
+    def test_direct_crop_is_compared_not_appended(self):
+        row = self.evaluate("KA01AB1234", 0.99)
+        direct = self.evaluate("KA01AC1234", 0.98)
+
+        selected = _reconcile_ocr(row, direct)
+
+        self.assertIn(selected.normalized_text, {row.normalized_text, direct.normalized_text})
+        self.assertEqual(selected.final_status, "UNCERTAIN")
+
+    def test_formatting_normalization_cannot_duplicate_characters(self):
+        evaluation = self.evaluate("  KA 01-AB 1234  ")
+        self.assertEqual(evaluation.normalized_text, "KA 01-AB 1234")
+
+    def test_single_row_routing_is_unchanged(self):
+        row_result = RowResult(self.row, 1, [0.0], 0.95, row_images=[self.row])
+        routing = _route_row_result(
+            row_result,
+            self.row,
+            FixedRecognizer([("KA01AB1234", 0.99)]),
+            None,
+            0.80,
+        )
+
+        self.assertEqual(routing.evaluation.normalized_text, "KA01AB1234")
+        self.assertEqual(routing.evaluation.final_status, "FORMAT_CONFIDENT")
 
     def test_structurally_valid_view_beats_extra_character_view(self):
         row = self.evaluate("RJ220P A1908", 0.999)

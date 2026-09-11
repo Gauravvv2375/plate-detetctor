@@ -65,6 +65,19 @@ def _intersection_over_smaller(left: _RowCandidate, right: _RowCandidate) -> flo
     return intersection / smaller if smaller > 0 else 0.0
 
 
+def _same_physical_row(left: _RowCandidate, right: _RowCandidate) -> bool:
+    """Identify duplicate OBB observations using geometry, never OCR text."""
+    vertical_distance = abs(left.center_y - right.center_y)
+    horizontal_distance = abs(left.center_x - right.center_x)
+    angle_distance = abs(((left.angle - right.angle) + 45) % 90 - 45)
+    return bool(
+        _intersection_over_smaller(left, right) >= 0.45
+        and vertical_distance <= 0.60 * max(left.height, right.height)
+        and horizontal_distance <= 0.60 * max(left.width, right.width)
+        and angle_distance <= 20
+    )
+
+
 def _select_registration_rows(candidates: list[_RowCandidate], plate_size: tuple[int, int]):
     """Remove duplicate/tiny header detections and retain at most two registration rows."""
     ignored: list[dict] = []
@@ -73,8 +86,7 @@ def _select_registration_rows(candidates: list[_RowCandidate], plate_size: tuple
         duplicate = next(
             (
                 accepted for accepted in deduplicated
-                if _intersection_over_smaller(candidate, accepted) >= 0.55
-                and abs(candidate.center_y - accepted.center_y) <= 0.65 * max(candidate.height, accepted.height)
+                if _same_physical_row(candidate, accepted)
             ),
             None,
         )

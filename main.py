@@ -553,18 +553,28 @@ def _estimate_visual_groups(image: Image.Image) -> int:
     return len(runs)
 
 
-def _routing_score(evaluation: OCREvaluation, visual_groups: int) -> float:
+def _routing_score(
+    evaluation: OCREvaluation, visual_groups: int, *, row_fragment: bool = False
+) -> float:
     if not evaluation.usable:
         return -10.0
     score = evaluation.confidence
-    score += {
-        "VALID_FORMAT": 0.20,
-        "POTENTIAL_FORMAT": 0.05,
-        "INVALID_FORMAT": -0.20,
-    }.get(evaluation.validation_status, 0.0)
+    # A physical row is only a fragment of a multi-row registration. Applying
+    # a whole-registration regex here can reward a hallucinated long row while
+    # penalizing the correct short fragment. Validate structure after unique
+    # physical rows have been assembled instead.
+    if not row_fragment:
+        score += {
+            "VALID_FORMAT": 0.20,
+            "POTENTIAL_FORMAT": 0.05,
+            "INVALID_FORMAT": -0.20,
+        }.get(evaluation.validation_status, 0.0)
     if visual_groups:
         length_gap = abs(len(_registration_units(evaluation.normalized_text)) - visual_groups)
-        score -= min(0.16, 0.04 * length_gap)
+        if row_fragment:
+            score -= 0.09 * length_gap
+        else:
+            score -= min(0.16, 0.04 * length_gap)
     return score
 
 
@@ -573,10 +583,25 @@ def _candidate_key(evaluation: OCREvaluation) -> str:
     return _compact_registration(evaluation.normalized_text)
 
 
+def _candidate_script(evaluation: OCREvaluation) -> str:
+    has_devanagari = _contains_devanagari(evaluation.normalized_text)
+    has_latin = any(
+        "A" <= character <= "Z" or "0" <= character <= "9"
+        for character in evaluation.normalized_text
+    )
+    return "mixed" if has_devanagari and has_latin else "devanagari" if has_devanagari else "latin"
+
+
 def _candidate_scores(
-    evaluations: list[tuple[str, OCREvaluation]], visual_groups: int
+    evaluations: list[tuple[str, OCREvaluation]],
+    visual_groups: int,
+    *,
+    row_fragment: bool = False,
 ) -> dict[str, float]:
-    scores = {name: _routing_score(evaluation, visual_groups) for name, evaluation in evaluations}
+    scores = {
+        name: _routing_score(evaluation, visual_groups, row_fragment=row_fragment)
+        for name, evaluation in evaluations
+    }
     for name, evaluation in evaluations:
         if not evaluation.usable:
             continue
@@ -587,6 +612,13 @@ def _candidate_scores(
             if other_name != name
         )
         scores[name] += 0.08 * agreements
+        script = _candidate_script(evaluation)
+        script_agreements = sum(
+            other.usable and _candidate_script(other) == script
+            for other_name, other in evaluations
+            if other_name != name
+        )
+        scores[name] += 0.08 * script_agreements
         if name == "mixed" and _contains_devanagari(evaluation.normalized_text) and any(
             "A" <= item <= "Z" or "0" <= item <= "9" for item in evaluation.normalized_text
         ):
@@ -619,6 +651,7 @@ def _route_ocr(
     mixed_recognizer: PARSeqRecognizer | None = None,
     raw_image: Image.Image | None = None,
     header: bool = False,
+    row_fragment: bool = False,
 ) -> OCRRouting:
     def recognize(model):
         # CSV-trained checkpoints saw RGB pixels without the legacy contrast /
@@ -636,7 +669,7 @@ def _route_ocr(
             return OCRRouting(latin, "single OCR model", latin.normalized_text, "", "", visual_groups)
         mixed = recognize(mixed_recognizer)
         evaluations = [("Latin", latin), ("mixed", mixed)]
-        scores = _candidate_scores(evaluations, visual_groups)
+        scores = _candidate_scores(evaluations, visual_groups, row_fragment=row_fragment)
         usable = [(name, evaluation) for name, evaluation in evaluations if evaluation.usable]
         selected, chosen = max(usable, key=lambda item: (scores[item[0]], item[0] == "mixed")) if usable else ("Latin", latin)
         return OCRRouting(
@@ -656,7 +689,7 @@ def _route_ocr(
     if mixed_recognizer is not None:
         mixed = recognize(mixed_recognizer)
         evaluations.append(("mixed", mixed))
-    scores = _candidate_scores(evaluations, visual_groups)
+    scores = _candidate_scores(evaluations, visual_groups, row_fragment=row_fragment)
     usable = [(name, evaluation) for name, evaluation in evaluations if evaluation.usable]
     priority = {"Devanagari": 0, "Latin": 1, "mixed": 2}
     selected, chosen = max(
@@ -732,7 +765,15 @@ def _route_row_result(
     if len(row_result.row_images) != 2:
         return _route_ocr(stitched_input, latin_recognizer, devanagari_recognizer, confidence_threshold, mixed_recognizer, row_result.image)
     routes = [
-        _route_ocr(mild_ocr_preprocess(row), latin_recognizer, devanagari_recognizer, confidence_threshold, mixed_recognizer, row)
+        _route_ocr(
+            mild_ocr_preprocess(row),
+            latin_recognizer,
+            devanagari_recognizer,
+            confidence_threshold,
+            mixed_recognizer,
+            row,
+            row_fragment=True,
+        )
         for row in row_result.row_images
     ]
     if not all(route.evaluation.usable for route in routes):
